@@ -1,7 +1,7 @@
 package com.flipkart.bean;
 
 public class FlipFitUser {
-    private String userId;
+    private int userId;
     private String firstName;
     private String lastName;
     private String emailId;
@@ -75,11 +75,11 @@ public class FlipFitUser {
         this.lastName = lastName;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.userId = Integer.parseInt(userId);
     }
 }

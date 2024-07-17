@@ -2,6 +2,7 @@ package com.flipkart.business;
 
 
 import com.flipkart.bean.FlipFitBooking;
+import com.flipkart.bean.FlipFitCustomer;
 import com.flipkart.bean.PaymentType;
 
 import java.util.List;
@@ -12,4 +13,8 @@ public interface CustomerService {
     boolean CancelSlot(String userId,Date date,int SlotId,int centerId);
     boolean makePayments(String paymentId, String paymentAmount, PaymentType paymentType);
     List<FlipFitBooking> showBookings(String userId);
+    String registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber);
+    FlipFitCustomer viewMyProfile(String userName);
+    void cancelBookingbyID(String bookingID);
+    List<FlipFitBooking> getCustomerBookings(String customerId);
 }
