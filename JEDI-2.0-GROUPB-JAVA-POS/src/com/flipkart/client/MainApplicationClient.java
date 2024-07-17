@@ -43,7 +43,8 @@ public class MainApplicationClient {
 
         switch (role){
             case ADMIN:
-                adminClient.adminRegister();
+                System.out.println("Admin is already registered");
+                mainPage();
                 break;
             case GYMOWNER:
                 gymOwnerClient.gymOwnerRegister();
