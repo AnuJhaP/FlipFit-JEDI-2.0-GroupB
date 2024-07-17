@@ -4,7 +4,7 @@ public class FlipFitSlot {
     private int SlotId;
     private String StartTime;
     private int CenterID;
-    private int NoOfSeatsAvailable;
+
     private ArrayList<FlipFitCustomer> Bookings;
 
     public int getSlotId() {
@@ -29,14 +29,6 @@ public class FlipFitSlot {
 
     public void setCenterID(int centerID) {
         CenterID = centerID;
-    }
-
-    public int getNoOfSeatsAvailable() {
-        return NoOfSeatsAvailable;
-    }
-
-    public void setNoOfSeatsAvailable(int noOfSeatsAvailable) {
-        NoOfSeatsAvailable = noOfSeatsAvailable;
     }
 
     public ArrayList<FlipFitCustomer> getBookings() {
