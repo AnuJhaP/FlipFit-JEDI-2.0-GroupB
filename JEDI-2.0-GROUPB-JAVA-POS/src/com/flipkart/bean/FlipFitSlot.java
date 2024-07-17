@@ -1,41 +1,44 @@
 package com.flipkart.bean;
-import java.util.ArrayList;
+import java.time.LocalTime;
+
+
 public class FlipFitSlot {
-    private int SlotId;
-    private String StartTime;
-    private int CenterID;
+    private String SlotId;
 
-    private ArrayList<FlipFitCustomer> Bookings;
-
-    public int getSlotId() {
+    public String getSlotId() {
         return SlotId;
     }
 
-    public void setSlotId(int slotId) {
+    public void setSlotId(String slotId) {
         SlotId = slotId;
     }
 
-    public String getStartTime() {
+    public LocalTime getStartTime() {
         return StartTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(LocalTime startTime) {
         StartTime = startTime;
     }
 
-    public int getCenterID() {
+    public String getCenterID() {
         return CenterID;
     }
 
-    public void setCenterID(int centerID) {
+    public void setCenterID(String centerID) {
         CenterID = centerID;
     }
 
-    public ArrayList<FlipFitCustomer> getBookings() {
-        return Bookings;
+    private LocalTime StartTime;
+    private String CenterID;
+
+    public FlipFitSlot(String slotId, LocalTime startTime, String centerID) {
+        SlotId = slotId;
+        StartTime = startTime;
+        CenterID = centerID;
     }
 
-    public void setBookings(ArrayList<FlipFitCustomer> bookings) {
-        Bookings = bookings;
-    }
+
+
+
 }

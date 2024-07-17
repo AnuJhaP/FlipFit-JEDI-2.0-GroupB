@@ -2,46 +2,80 @@ package com.flipkart.bean;
 import java.util.ArrayList;
 public class FlipFitCenter {
 
-    private int centerId;
+    private String gymCentreID;
+    private String ownerID;
+    private String gymCenterName;
+    private String city;
+    private int capacity;
+    private int price;
+    private int isApproved;
 
-    private int ownerId;
-
-    private Address address;
-
-    private Boolean isApproved;
-
-    public Address getAddress() {
-        return address;
+    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String city, int price, int capacity, int isApproved) {
+        this.gymCentreID = gymCentreID;
+        this.ownerID = ownerID;
+        this.gymCenterName = gymCenterName;
+        this.city = city;
+        this.price = price;
+        this.capacity = capacity;
+        this.isApproved = isApproved;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public String getGymCentreID() {
+        return gymCentreID;
     }
 
-    public ArrayList<FlipFitSlot> getSlots() {
-        return slots;
+    public void setGymCentreID(String gymCentreID) {
+        this.gymCentreID = gymCentreID;
     }
 
-    public void setSlots(ArrayList<FlipFitSlot> slots) {
-        this.slots = slots;
+    public String getOwnerID() {
+        return ownerID;
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public void setOwnerID(String ownerID) {
+        this.ownerID = ownerID;
     }
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
+    public String getGymCenterName() {
+        return gymCenterName;
     }
 
-    public int getCenterId() {
-        return centerId;
+    public void setGymCenterName(String gymCenterName) {
+        this.gymCenterName = gymCenterName;
     }
 
-    public void setCenterId(int centerId) {
-        this.centerId = centerId;
+    public String getCity() {
+        return city;
     }
 
-    private ArrayList<FlipFitSlot> slots;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getIsApproved() {
+        return isApproved;
+    }
+
+    public void setIsApproved(int isApproved) {
+        this.isApproved = isApproved;
+    }
+
+
 
 }
