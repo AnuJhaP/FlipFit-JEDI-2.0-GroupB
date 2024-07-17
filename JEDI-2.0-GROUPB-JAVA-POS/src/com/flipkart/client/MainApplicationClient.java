@@ -4,10 +4,12 @@ import com.flipkart.bean.Role;
 
 import java.util.Scanner;
 
+
 public class MainApplicationClient {
 
     public static int userId = 0;
     public static Scanner scanner = new Scanner(System.in);
+
     private static CustomerClient customerClient = new CustomerClient();
     private static GymOwnerClient gymOwnerClient = new GymOwnerClient();
 
