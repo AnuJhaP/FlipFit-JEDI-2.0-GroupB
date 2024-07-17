@@ -4,11 +4,7 @@ import com.flipkart.bean.Address;
 
 import java.util.Scanner;
 
-public class CustomerClient {
-    //customer login function
-
-
-    //customer register function
+public class CustomerFlipFitMenu {
 
     public void customerRegister(){
 
