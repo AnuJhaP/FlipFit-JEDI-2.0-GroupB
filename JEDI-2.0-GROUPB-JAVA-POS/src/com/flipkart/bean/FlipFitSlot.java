@@ -3,6 +3,9 @@ import java.util.ArrayList;
 public class FlipFitSlot {
     private int SlotId;
     private String StartTime;
+    private int CenterID;
+    private int NoOfSeatsAvailable;
+    private ArrayList<FlipFitCustomer> Bookings;
 
     public int getSlotId() {
         return SlotId;
@@ -43,8 +46,4 @@ public class FlipFitSlot {
     public void setBookings(ArrayList<FlipFitCustomer> bookings) {
         Bookings = bookings;
     }
-
-    private int CenterID;
-    private int NoOfSeatsAvailable;
-    private ArrayList<FlipFitCustomer> Bookings;
 }
