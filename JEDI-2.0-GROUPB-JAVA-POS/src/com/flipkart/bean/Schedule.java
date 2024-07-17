@@ -3,14 +3,14 @@ package com.flipkart.bean;
 import java.sql.Date;
 import java.util.UUID;
 
-public class schedule {
+public class Schedule {
 
     private String scheduleID;
     private Date date;
     private String slotID;
     private int availability;
 
-    public schedule( Date date, String slotID, int availability) {
+    public Schedule(Date date, String slotID, int availability) {
         this.scheduleID = String.valueOf(UUID.randomUUID());
         this.date = date;
         this.slotID = slotID;
