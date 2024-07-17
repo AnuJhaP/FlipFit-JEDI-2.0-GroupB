@@ -8,7 +8,7 @@ public class FlipFitAdminMenu {
     private static Scanner scanner = new Scanner(System.in);
     public void AdminMenu(){
         System.out.println("Welcome to Flipkart Admin Menu");
-        System.out.println("1. View Pending Gym Owner Requests\n2. Approve Pending Gym Owner Requests\n3. View Pending Gym Center Requests\n4. Approve Pending Gym Center Requests\n4.  Exit");
+        System.out.println("1. View Pending Gym Owner Requests\n2. Approve Pending Gym Owner Requests\n3. View Pending Gym Center Requests\n4. Approve Pending Gym Center Requests\n5.  Exit");
         int option = scanner.nextInt();
         switch(option){
             case 1:
@@ -32,8 +32,16 @@ public class FlipFitAdminMenu {
         }
         AdminMenu();
     }
-    private void viewPendingGymOwnerRequests(){};
-    private void approvePendingGymOwnerRequests(){};
-    private void viewPendingGymCenterRequests(){};
-    private void approvePendingGymCenterRequests(){};
+    private void viewPendingGymOwnerRequests(){
+        System.out.println("Enter Pending Gym Owner Request ID");
+    };
+    private void approvePendingGymOwnerRequests(){
+        System.out.println("Enter Approving Gym Owner Request ID");
+    };
+    private void viewPendingGymCenterRequests(){
+        System.out.println("Enter Pending Gym Center Request ID");
+    };
+    private void approvePendingGymCenterRequests(){
+        System.out.println("Enter Approving Gym Center Request ID");
+    };
 }
