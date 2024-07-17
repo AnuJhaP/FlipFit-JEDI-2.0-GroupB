@@ -5,6 +5,14 @@ public class Address {
     private String state;
     private String pincode;
     private String streetAdress;
+
+    public Address(String city, String state, String pincode, String streetAdress) {
+        this.city = city;
+        this.state = state;
+        this.pincode = pincode;
+        this.streetAdress = streetAdress;
+    }
+
     public String getPincode() {
         return pincode;
     }
