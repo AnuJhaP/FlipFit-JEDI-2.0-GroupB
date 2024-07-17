@@ -1,11 +1,8 @@
 package com.flipkart.client;
-import com.flipkart.bean.Address;
+
 import com.flipkart.bean.Role;
 
-
 import java.util.Scanner;
-
-import static com.flipkart.constant.Constants.*;
 
 public class MainApplicationClient {
 
@@ -40,54 +37,32 @@ public class MainApplicationClient {
     }
 
     private static void register(){
-        try {
 
-            System.out.println("Enter your role");
-            Role role=Role.valueOf(scanner.next());
+        System.out.println("Enter your role");
+        Role role=Role.valueOf(scanner.next());
 
-            switch (role){
-                case ADMIN:
-                    login();
-                    break;
-                case GYMOWNER:
-                    gymOwnerClient.gymOwnerRegister();
-                    break;
-                case CUSTOMER:
-                    customerClient.customerRegister();
-                    break;
-                default:
-                    System.out.println(INVALID_CHOICE_ERROR);
-                    break;
-            }
-        }catch (IllegalArgumentException e){
-            System.out.println(INVALID_CHOICE_ERROR);
+        switch (role){
+            case ADMIN:
+                adminClient.adminRegister();
+                break;
+            case GYMOWNER:
+                gymOwnerClient.gymOwnerRegister();
+                break;
+            case CUSTOMER:
+                customerClient.customerRegister();
+                break;
+            default:
+                System.out.println("invalid_choice");
+                break;
         }
     }
 
     private static void login(){
-        try {
-            System.out.println("Enter your Email ID");
-            String email = scanner.next();
-            System.out.println("Enter your Password");
-            String password = scanner.next();
+        System.out.println("Enter your Email ID");
+        String email = scanner.next();
+        System.out.println("Enter your Password");
+        String password = scanner.next();
 
-            switch (role){
-                case ADMIN:
-                    adminClient.adminLogin(email,password);
-                    break;
-                case GYMOWNER:
-                    gymOwnerClient.gymOwnerLogin(email,password);
-                    break;
-                case CUSTOMER:
-                    customerClient.customerLogin(email,password);
-                    break;
-                default:
-                    System.out.println(INVALID_CHOICE_ERROR);
-                    break;
-            }
-        }catch (IllegalArgumentException e){
-            System.out.println(INVALID_CHOICE_ERROR);
-        }
     }
 
     private static void changePassword(){
