@@ -47,7 +47,7 @@ public class MainApplicationClient {
 
             switch (role){
                 case ADMIN:
-                    adminClient.adminRegister();
+                    login();
                     break;
                 case GYMOWNER:
                     gymOwnerClient.gymOwnerRegister();
