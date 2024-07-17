@@ -71,20 +71,20 @@ public class MainApplicationClient {
             System.out.println("Enter your Password");
             String password = scanner.next();
 
-            switch (role){
-                case ADMIN:
-                    adminClient.adminLogin(email,password);
-                    break;
-                case GYMOWNER:
-                    gymOwnerClient.gymOwnerLogin(email,password);
-                    break;
-                case CUSTOMER:
-                    customerClient.customerLogin(email,password);
-                    break;
-                default:
-                    System.out.println(INVALID_CHOICE_ERROR);
-                    break;
-            }
+//            switch (role){
+//                case ADMIN:
+//                    adminClient.adminLogin(email,password);
+//                    break;
+//                case GYMOWNER:
+//                    gymOwnerClient.gymOwnerLogin(email,password);
+//                    break;
+//                case CUSTOMER:
+//                    customerClient.customerLogin(email,password);
+//                    break;
+//                default:
+//                    System.out.println(INVALID_CHOICE_ERROR);
+//                    break;
+//            }
         }catch (IllegalArgumentException e){
             System.out.println(INVALID_CHOICE_ERROR);
         }
