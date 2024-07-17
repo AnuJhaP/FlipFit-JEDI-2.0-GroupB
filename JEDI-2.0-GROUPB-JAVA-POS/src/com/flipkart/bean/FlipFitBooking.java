@@ -5,8 +5,6 @@ public class FlipFitBooking {
 
     private int bookingId;
 
-    private int bookingId;
-
     private int isAvailable;
 
     private int slotId;

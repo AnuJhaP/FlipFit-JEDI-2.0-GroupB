@@ -8,6 +8,8 @@ public class FlipFitCenter {
 
     private Address address;
 
+    private Boolean isApproved;
+
     public Address getAddress() {
         return address;
     }

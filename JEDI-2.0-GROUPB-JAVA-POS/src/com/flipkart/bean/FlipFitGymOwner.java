@@ -4,6 +4,7 @@ public class FlipFitGymOwner extends FlipFitUser {
     private String AccountNo;
     private String IFSCCode;
     private String OwnerId;
+    private Boolean isApproved;
 
     public String getAccountNo(){
         return AccountNo;
