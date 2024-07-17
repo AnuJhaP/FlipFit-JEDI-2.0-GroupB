@@ -17,14 +17,14 @@ public class MainApplicationClient {
 
 
     private static void mainPage(){
-        System.out.println("1. Sign in\n2. Sign up\n4. Change Password\n5. Exit");
+        System.out.println("1. Login\n2. Register\n3. Change Password\n4. Exit");
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                signin();
+                login();
                 break;
             case 2:
-                signup();
+                register();
                 break;
             case 3:
                 changePassword();
@@ -39,51 +39,21 @@ public class MainApplicationClient {
         mainPage();
     }
 
-    private static void signup(){
+    private static void register(){
         try {
-            System.out.println("Enter your First Name");
-            String firstName = scanner.next();
 
-            System.out.println("Enter your Last Name");
-            String lastName = scanner.next();
-
-            System.out.println("Enter your Email Id");
-            String email = scanner.next();
-
-            System.out.println("Enter your Password");
-            String password = scanner.next();
-
-            System.out.println("Enter your Phone Number");
-            String phoneNumber = scanner.nextIn();
-
-            System.out.println("Enter your Age");
-            String age = scanner.nextIn();
-
-            System.out.println("Enter your Role");
-            Role role = Role.valueOf(scanner.next());
-
-
-
-            System.out.println("Enter your Address - City:");
-            String city = scanner.next();
-            System.out.println("Enter your Address - State:");
-            String state = scanner.next();
-            System.out.println("Enter your Address - Pin Code:");
-            String pinCode = scanner.next();
-            System.out.println("Enter your Address - Street Address:");
-            String streetAddress = scanner.next();
-
-            Address address = new Address(city, state, pincode, streetAddress);
+            System.out.println("Enter your role");
+            Role role=Role.valueOf(scanner.next());
 
             switch (role){
                 case ADMIN:
-                    adminClient.adminLogin(userName,password);
+                    adminClient.adminRegister();
                     break;
                 case GYMOWNER:
-                    gymOwnerClient.gymOwnerLogin(userName,password);
+                    gymOwnerClient.gymOwnerRegister();
                     break;
                 case CUSTOMER:
-                    customerClient.customerLogin(userName,password);
+                    customerClient.customerRegister();
                     break;
                 default:
                     System.out.println(INVALID_CHOICE_ERROR);
@@ -94,30 +64,35 @@ public class MainApplicationClient {
         }
     }
 
-//    private static void signin(){
-//        try {
-//            System.out.println("Enter your role");
-//            Role role = Role.valueOf(scanner.next().toUpperCase());
-//
-//            switch (role){
-//                case ADMIN:
-//                    System.out.println("Admin is already registered");
-//                    mainPage();
-//                    break;
-//                case CUSTOMER:
-//                    customerClient.register();
-//                    break;
-//                case GYMOWNER:
-//                    gymOwnerClient.register();
-//                    break;
-//                default:
-//                    System.out.println(INVALID_CHOICE_ERROR);
-//                    break;
-//            }
-//        }catch (IllegalArgumentException e){
-//            System.out.println(INVALID_CHOICE_ERROR);
-//        }
-//    }
+    private static void login(){
+        try {
+            System.out.println("Enter your Email ID");
+            String email = scanner.next();
+            System.out.println("Enter your Password");
+            String password = scanner.next();
+
+            switch (role){
+                case ADMIN:
+                    adminClient.adminLogin(email,password);
+                    break;
+                case GYMOWNER:
+                    gymOwnerClient.gymOwnerLogin(email,password);
+                    break;
+                case CUSTOMER:
+                    customerClient.customerLogin(email,password);
+                    break;
+                default:
+                    System.out.println(INVALID_CHOICE_ERROR);
+                    break;
+            }
+        }catch (IllegalArgumentException e){
+            System.out.println(INVALID_CHOICE_ERROR);
+        }
+    }
+
+    private static void changePassword(){
+
+    }
 
     public static void main(String[] args) {
         System.out.println("WELCOME_MESSAGE");
