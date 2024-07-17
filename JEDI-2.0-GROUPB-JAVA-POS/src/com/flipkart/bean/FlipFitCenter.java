@@ -1,7 +1,12 @@
 package com.flipkart.bean;
 import java.util.ArrayList;
 public class FlipFitCenter {
+
     private int centerId;
+
+    private int ownerId;
+
+    private Address address;
 
     public Address getAddress() {
         return address;
@@ -35,7 +40,6 @@ public class FlipFitCenter {
         this.centerId = centerId;
     }
 
-    private int ownerId;
     private ArrayList<FlipFitSlot> slots;
-    private Address address;
+
 }

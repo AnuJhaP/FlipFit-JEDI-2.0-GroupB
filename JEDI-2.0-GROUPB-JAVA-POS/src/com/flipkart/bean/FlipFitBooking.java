@@ -2,10 +2,14 @@ package com.flipkart.bean;
 
 public class FlipFitBooking {
     private int userId;
+
     private int bookingId;
 
+    private int bookingId;
 
+    private int isAvailable;
 
+    private int slotId;
 
     public int getBookingId() {
         return bookingId;
@@ -38,9 +42,5 @@ public class FlipFitBooking {
     public void setSlotId(int slotId) {
         this.slotId = slotId;
     }
-
-    private int bookingId;
-    private int isAvailable;
-    private int slotId;
 
 }
