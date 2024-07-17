@@ -2,6 +2,10 @@ package com.flipkart.bean;
 
 public class FlipFitBooking {
     private int userId;
+    private int bookingId;
+
+
+
 
     public int getBookingId() {
         return bookingId;
