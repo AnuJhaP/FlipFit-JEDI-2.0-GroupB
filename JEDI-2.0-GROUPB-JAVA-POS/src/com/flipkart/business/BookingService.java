@@ -6,3 +6,5 @@ public interface BookingService {
     void addBooking(String userId, String scheduleID);
     void cancelBooking(String bookingID);
 }
+
+
