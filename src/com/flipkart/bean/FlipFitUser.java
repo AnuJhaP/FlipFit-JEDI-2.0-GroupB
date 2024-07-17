@@ -1,2 +1,4 @@
-package com.flipkart.bean;public class FlipFitUser {
+package com.flipkart.bean;
+
+public class FlipFitUser {
 }
