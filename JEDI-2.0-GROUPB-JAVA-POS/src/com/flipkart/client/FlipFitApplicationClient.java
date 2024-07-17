@@ -4,12 +4,12 @@ import com.flipkart.bean.Role;
 
 import java.util.Scanner;
 
-public class MainApplicationClient {
+public class FlipFitApplicationClient {
 
     public static int userId = 0;
     public static Scanner scanner = new Scanner(System.in);
-    private static CustomerClient customerClient = new CustomerClient();
-    private static GymOwnerClient gymOwnerClient = new GymOwnerClient();
+    private static CustomerFlipFitMenu customerFlipFitMenu = new CustomerFlipFitMenu();
+    private static GymOwnerFlipFitMenu gymOwnerFlipFitMenu = new GymOwnerFlipFitMenu();
 
 
     private static void mainPage(){
@@ -46,10 +46,10 @@ public class MainApplicationClient {
                 mainPage();
                 break;
             case GYMOWNER:
-                //  gymOwnerClient.gymOwnerRegister();
+                gymOwnerFlipFitMenu.gymOwnerRegister();
                 break;
             case CUSTOMER:
-                customerClient.customerRegister();
+                customerFlipFitMenu.customerRegister();
                 break;
             default:
                 System.out.println("invalid_choice");
