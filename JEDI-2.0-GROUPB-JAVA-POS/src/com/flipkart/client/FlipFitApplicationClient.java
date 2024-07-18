@@ -10,6 +10,7 @@ public class FlipFitApplicationClient {
     public static Scanner scanner = new Scanner(System.in);
     private static CustomerFlipFitMenu customerFlipFitMenu = new CustomerFlipFitMenu();
     private static GymOwnerFlipFitMenu gymOwnerFlipFitMenu = new GymOwnerFlipFitMenu();
+    private static FlipFitAdminMenu flipFitAdminMenu = new FlipFitAdminMenu();
 
 
     private static void mainPage(){
@@ -58,10 +59,29 @@ public class FlipFitApplicationClient {
     }
 
     private static void login(){
-        System.out.println("Enter your Email ID");
-        String email = scanner.next();
+        System.out.println("Enter your User Name");
+        String userName = scanner.next();
+
         System.out.println("Enter your Password");
         String password = scanner.next();
+
+        System.out.println("Enter your role");
+        Role role=Role.valueOf(scanner.next());
+
+        switch (role){
+            case ADMIN:
+                flipFitAdminMenu.AdminMenu();
+                break;
+            case GYMOWNER:
+                gymOwnerFlipFitMenu.gymOwnerClientMainPage(userName);
+                break;
+            case CUSTOMER:
+                customerFlipFitMenu.customerClientMainPage(userName);
+                break;
+            default:
+                System.out.println("invalid_choice");
+                break;
+        }
 
         System.out.println("You have been successfully logged in");
 

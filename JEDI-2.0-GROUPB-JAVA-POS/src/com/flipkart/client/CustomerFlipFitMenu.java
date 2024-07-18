@@ -24,11 +24,10 @@ public class CustomerFlipFitMenu {
 
 
         System.out.println("Registering Customer.........");
-        System.out.println("Enter your First name.");
+        System.out.println("Enter your User Name");
         Scanner scanner = new Scanner(System.in);
-        String firstName = scanner.nextLine();
-        System.out.println("Enter your Last name.");
-        String lastName = scanner.nextLine();
+        String userName = scanner.nextLine();
+
 
         System.out.println("Enter your email address.");
         String email = scanner.nextLine();
@@ -58,31 +57,31 @@ public class CustomerFlipFitMenu {
 
         System.out.println("Customer Registered Successfully.");
 
-        String userId = customerService.registerCustomer(firstName,lastName,password,email,phoneNumber);
-        customerClientMainPage(firstName, userId);
+        customerService.registerCustomer(userName,password,email,phoneNumber);
+        customerClientMainPage(userName);
     }
 
-    private void customerClientMainPage(String firstName, String userId) {
+    public void customerClientMainPage(String userName) {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = currentTime.format(myFormat);
-        System.out.println("WELCOME "+firstName+" !!\nWhat you what to do\nLogin TIME: "+currentTime);
+        System.out.println("WELCOME "+userName+" !!\nWhat you what to do\nLogin TIME: "+currentTime);
         while(true) {
             System.out.println("1. View My Profile \n2. Book a slot in a Gym \n3. View Bookings\n4. Cancel Bookings\n5. Go Back to previous menu");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    FlipFitCustomer customer = customerService.viewMyProfile(userId);
+                    FlipFitCustomer customer = customerService.viewMyProfile(userName);
                     utils.printCustomerProfile(customer);
                     break;
                 case 2:
-                    bookSlotSubMenu(userId);
+                    bookSlotSubMenu(userName);
                     break;
                 case 3:
-                    printUserPlan(userId);
+                    printUserPlan(userName);
                     break;
                 case 4:
-                    cancelBookingSubMenu(userId);
+                    cancelBookingSubMenu(userName);
                     break;
                 case 5:
                     System.out.println("\nGOING BACK TO PREVIOUS MENU\n");
