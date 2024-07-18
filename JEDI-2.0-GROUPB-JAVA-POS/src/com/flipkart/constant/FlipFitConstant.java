@@ -6,4 +6,6 @@ public class FlipFitConstant {
     public static String RESET_COLOR = "\u001B[0m";
     public static String YELLOW_COLOR = "\u001B[33m";
     public static String DASHED_LINE = GREEN_COLOR +"------------------------------------------------------------------------" + RESET_COLOR;
+    public static String TB_DASHED_LINE = GREEN_COLOR +"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + RESET_COLOR;
+
 }

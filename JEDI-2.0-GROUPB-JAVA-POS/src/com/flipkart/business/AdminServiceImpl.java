@@ -6,13 +6,14 @@ import com.flipkart.bean.FlipFitGymOwner;
 import java.util.List;
 
 public class AdminServiceImpl implements AdminService {
+
     @Override
-    public void validateCenter(int centerId, Boolean isApproved) {
+    public void validateCenter(String centerId, Boolean isApproved) {
 
     }
 
     @Override
-    public void validateOwner(int ownerId, Boolean isApproved) {
+    public void validateOwner(String ownerId, Boolean isApproved) {
 
     }
 
