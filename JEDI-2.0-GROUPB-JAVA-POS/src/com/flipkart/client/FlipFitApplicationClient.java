@@ -2,7 +2,10 @@ package com.flipkart.client;
 
 import com.flipkart.bean.Role;
 
+import java.util.Random;
 import java.util.Scanner;
+
+import static com.flipkart.bean.Role.*;
 
 public class FlipFitApplicationClient {
 
@@ -39,17 +42,18 @@ public class FlipFitApplicationClient {
     private static void register(){
 
         System.out.println("Enter your role");
-        Role role=Role.valueOf(scanner.next());
+//        Role role=Role.valueOf(scanner.next());
+        Role role = new Role("abs",scanner.next());
 
-        switch (role){
-            case ADMIN:
+        switch (role.getRoleId()){
+            case "ADMIN":
                 System.out.println("Admin is already registered");
                 mainPage();
                 break;
-            case GYMOWNER:
+            case "GYMOWNER":
                 gymOwnerFlipFitMenu.gymOwnerRegister();
                 break;
-            case CUSTOMER:
+            case "CUSTOMER":
                 customerFlipFitMenu.customerRegister();
                 break;
             default:
