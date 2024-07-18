@@ -13,7 +13,7 @@ public class FlipFitApplicationClient {
     public static Scanner scanner = new Scanner(System.in);
     private static CustomerFlipFitMenu customerFlipFitMenu = new CustomerFlipFitMenu();
     private static GymOwnerFlipFitMenu gymOwnerFlipFitMenu = new GymOwnerFlipFitMenu();
-    private static FlipFitAdminMenu flipFitAdminMenu = new FlipFitAdminMenu();
+    private static AdminFlipFitMenu flipFitAdminMenu = new AdminFlipFitMenu();
 
 
     private static void mainPage(){
@@ -45,10 +45,10 @@ public class FlipFitApplicationClient {
 //        Role role=Role.valueOf(scanner.next());
         Role role = new Role("abs",scanner.next());
 
-        switch (role.getRoleId()){
+        switch (role.getDescription()){
             case "ADMIN":
                 System.out.println("Admin is already registered");
-                mainPage();
+                flipFitAdminMenu.AdminMenu();
                 break;
             case "GYMOWNER":
                 gymOwnerFlipFitMenu.gymOwnerRegister();
