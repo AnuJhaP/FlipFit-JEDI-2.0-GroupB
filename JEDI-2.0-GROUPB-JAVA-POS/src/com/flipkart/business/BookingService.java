@@ -7,5 +7,5 @@ public interface BookingService {
 boolean checkBookingOverlap(String customerId,Date data,String slotId);
 void addBooking(String userId,String scheduleID);
 void cancelBooking(String bookingId);
-List<FlipFitBooking> getBookingByCustomerId(String customerId)
+List<FlipFitBooking> getBookingByCustomerId(String customerId);
 }
