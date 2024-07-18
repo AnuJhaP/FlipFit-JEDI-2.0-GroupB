@@ -31,7 +31,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public String registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) {
+    public String registerCustomer(String userName, String password, String email, String phoneNumber) {
 
         return null;
     }
