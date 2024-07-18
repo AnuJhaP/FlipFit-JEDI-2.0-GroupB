@@ -70,16 +70,16 @@ public class FlipFitApplicationClient {
         String password = scanner.next();
 
         System.out.println("Enter your role");
-        Role role=Role.valueOf(scanner.next());
+        Role role = new Role("abs",scanner.next());
 
-        switch (role){
-            case ADMIN:
+        switch (role.getDescription()){
+            case "ADMIN":
                 flipFitAdminMenu.AdminMenu();
                 break;
-            case GYMOWNER:
+            case "GYMOWNER":
                 gymOwnerFlipFitMenu.gymOwnerClientMainPage(userName);
                 break;
-            case CUSTOMER:
+            case "CUSTOMER":
                 customerFlipFitMenu.customerClientMainPage(userName);
                 break;
             default:
