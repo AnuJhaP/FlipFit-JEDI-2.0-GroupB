@@ -33,9 +33,9 @@ public class FlipFitSlot {
     private String CenterID;
 
     public FlipFitSlot(String slotId, LocalTime startTime, String centerID) {
-        SlotId = slotId;
-        StartTime = startTime;
-        CenterID = centerID;
+        this.SlotId = slotId;
+        this.StartTime = startTime;
+        this.CenterID = centerID;
     }
 
 
