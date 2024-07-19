@@ -5,33 +5,34 @@ import com.flipkart.bean.FlipFitSlot;
 import java.util.List;
 
 public class SlotServiceImpl implements SlotService{
-    @Override
-    public List<FlipFitSlot> getAllSlotsByCentre(String centreID) {
-        return List.of();
+
+public List<FlipFitSlot> getAllSlotsByCentre(String centreID) {
+    return slotDAO.getSlotByCentreId(centreID);
+}
+
+    public FlipFitSlot getSlotByID(String slotID){
+        return slotDAO.getSlotById(slotID);
     }
 
-    @Override
-    public FlipFitSlot getSlotByID(String slotID) {
-        return null;
+    public FlipFitSlot getSlotByIDandCentreId(String slotID,String centreId){
+        return slotDAO.getSlotByIdandCentreId(slotID,centreId);
     }
 
-    @Override
-    public List<FlipFitSlot> getSlotList() {
-        return List.of();
+    public List<FlipFitSlot> getSlotList(){
+        return slotDAO.getSlotList();
     }
 
-    @Override
-    public void bookSlots(String gymCentreId, List<FlipFitSlot> slotList) {
-
+    public void addSlotsForGym(String gymCentreId, List<FlipFitSlot> slotList){
+        System.out.println("Adding all slots to gym: " + gymCentreId);
+        for(FlipFitSlot slot : slotList) {
+            slot.setCentreID(gymCentreId);
+            slotDAO.addSlot(slot);
+        }
     }
 
-    @Override
-    public boolean isSlotValid(String slotID, String centreId) {
-        return false;
+    public boolean isSlotValid(String slotID,String centreId){
+        return getSlotByIDandCentreId(slotID,centreId) != null;
     }
-
-    @Override
-    public void cancelSlot(String slotId, String centerId) {
 
     }
 }

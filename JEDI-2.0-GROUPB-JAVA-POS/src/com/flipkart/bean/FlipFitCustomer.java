@@ -5,6 +5,10 @@ public class FlipFitCustomer extends FlipFitUser {
     private String paymentAmount;
     private PaymentType paymentType;
 
+    public FlipFitCustomer(String id, String userName, String email, String password, Role role) {
+        super(id, userName, email, password, role);
+    }
+
     public String getPaymentId() {
         return paymentId;
     }

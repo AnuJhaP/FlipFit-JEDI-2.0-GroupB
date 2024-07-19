@@ -6,23 +6,20 @@ import java.util.List;
 
 public class GymOwnerServiceImpl implements GymOwnerService {
 
-    @Override
+//    private static GymOwnerDAO gymOwnerDAO = new GymOwnerDAO();
     public void requestGymOwnerApproval(String gymOwnerId) {
-
+        gymOwnerDAO.sendOwnerApprovalRequest(gymOwnerId);
     }
 
-    @Override
     public List<FlipFitGymOwner> viewAllGymOwners() {
-        return List.of();
+        return gymOwnerDAO.getGymOwnerList();
     }
 
-    @Override
-    public boolean loginGymOwner(String userId, String password) {
-        return false;
+    public boolean loginGymOwner(String username,String password){
+        return gymOwnerDAO.loginGymOwner(username,password);
     }
 
-    @Override
-    public void registerGymOwner(String userId, String userName, String password, String email, String panNumber, String cardNumber) {
-
+    public void registerGymOwner(String userId,String userName, String password, String email, String panNumber,String cardNumber) {
+        gymOwnerDAO.registerGymOwner(new FlipFitGymOwner(userId,userName,email,password,panNumber));
     }
 }

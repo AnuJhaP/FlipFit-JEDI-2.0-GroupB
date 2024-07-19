@@ -2,6 +2,7 @@ package com.flipkart.client;
 
 import com.flipkart.bean.Role;
 
+import java.text.ParseException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class FlipFitApplicationClient {
     private static FlipFitAdminMenu flipFitAdminMenu = new FlipFitAdminMenu();
 
 
-    private static void mainPage(){
+    private static void mainPage() throws ParseException {
         System.out.println("1. Login\n2. Register\n3. Change Password\n4. Exit");
         int choice = scanner.nextInt();
         switch (choice) {
@@ -39,7 +40,7 @@ public class FlipFitApplicationClient {
         mainPage();
     }
 
-    private static void register(){
+    private static void register() throws ParseException {
 
         System.out.println("Enter your role");
 //        Role role=Role.valueOf(scanner.next());
@@ -62,7 +63,7 @@ public class FlipFitApplicationClient {
         }
     }
 
-    private static void login(){
+    private static void login() throws ParseException {
         System.out.println("Enter your User Name");
         String userName = scanner.next();
 
@@ -95,7 +96,7 @@ public class FlipFitApplicationClient {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         System.out.println("Welcome TO FlipFit");
         mainPage();
     }

@@ -9,43 +9,32 @@ import java.util.List;
 
 public class GymCenterServiceImpl implements GymCenterService{
 
-    @Override
-    public boolean deleteGymCentre(int centreId) {
-        return false;
-    }
 
-    @Override
-    public List<FlipFitSlot> viewAvailableSlots(int centreId) {
-        return List.of();
-    }
+    private static ScheduleServiceImpl scheduleService = new ScheduleServiceImpl();
 
-    @Override
     public List<FlipFitCenter> getAllCentresByOwmerId(String gymOwnerId) {
-        return List.of();
+        return gymCentreDAO.getAllCentresByOwmerId(gymOwnerId);
     }
 
-    @Override
-    public List<FlipFitCenter> getCentresByCity(String city) {
-        return List.of();
+    public List<FlipFitCenter> getCentresByCity(String city){
+        return gymCentreDAO.getGymCentreListByCity(city);
     }
 
-    @Override
-    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date) {
-        return List.of();
+    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date){
+        return scheduleService.getAllAvailableSlotsByDate(centreID, date);
     }
 
-    @Override
     public void addCenter(FlipFitCenter gymCentre) {
+        gymCentreDAO.addGymCentre(gymCentre);
 
     }
 
-    @Override
-    public void requestGymCentreApproval(String gymCentreId) {
-
+    public void requestGymCentreApproval(String gymCentreId){
+        gymCentreDAO.sendCentreApprovalRequest(gymCentreId);
     }
 
-    @Override
     public FlipFitCenter getGymCentreById(String centreID) {
-        return null;
+        FlipFitCenter gymCentre = gymCentreDAO.getGymCentreByCentreId(centreID);
+        return gymCentre;
     }
 }
