@@ -8,6 +8,16 @@ public class SQLConstants {
     public static final String CUSTOMER_LOGIN_QUERY = "SELECT * FROM FlipFit.Customer WHERE name = ? AND password = ?";
     public static final String GET_CUSTOMER_BY_ID = "SELECT * FROM FlipFit.Customer WHERE name = ?;";
 
+    /**
+     * Slot SQL Queries
+     */
+    public static final String FETCH_ALL_SLOTS ="SELECT * FROM FlipFit.Slot";
+    public static final String FETCH_SLOT_BY_CENTRE ="SELECT * FROM FlipFit.Slot WHERE centreId=?";
+    public static final String ADD_SLOT ="INSERT INTO FlipFit.Slot(slotId, centreId, time) values (?, ?, ?)";
+    public static final String FETCH_SLOT_BY_ID = "SELECT * FROM FlipFit.Slot WHERE slotId=?";
+    public static final String FETCH_SLOT_BY_ID_AND_CENTRE_ID = "SELECT * FROM FlipFit.Slot WHERE slotId=? AND centreId=?";
+
+
     public static final String FETCH_ALL_GYM_OWNERS_QUERY = "SELECT * FROM FlipFit.GymOwner";
     public static final String LOGIN_GYM_OWNER = "Select * from GymOwner where name=? and password=?";
     public static final String REGISTER_GYM_OWNER = "Insert into GymOwner values (?,?,?,?,?,?,?)";
