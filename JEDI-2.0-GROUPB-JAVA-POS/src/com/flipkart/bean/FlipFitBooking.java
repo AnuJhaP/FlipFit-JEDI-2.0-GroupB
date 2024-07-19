@@ -9,6 +9,16 @@ public class FlipFitBooking {
 
     private int slotId;
 
+    public int getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(int scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+    private int scheduleId;
+
     public int getBookingId() {
         return bookingId;
     }

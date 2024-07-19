@@ -7,15 +7,10 @@ public class FlipFitUser {
     private String password;
     private String age;
     private Role role;
-    private Address address;
     private String phoneNumber;
 
     public String getUserName() {
         return userName;
-    }
-
-    public Address getAddress() {
-        return address;
     }
 
     public String getPhoneNumber() {
@@ -24,10 +19,6 @@ public class FlipFitUser {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 
     public Role getRole() {
