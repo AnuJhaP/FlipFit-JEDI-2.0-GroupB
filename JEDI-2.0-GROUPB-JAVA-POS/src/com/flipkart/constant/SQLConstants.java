@@ -17,6 +17,7 @@ public class SQLConstants {
     public static final String FETCH_SLOT_BY_ID = "SELECT * FROM FlipFit.Slot WHERE slotId=?";
     public static final String FETCH_SLOT_BY_ID_AND_CENTRE_ID = "SELECT * FROM FlipFit.Slot WHERE slotId=? AND centreId=?";
 
+    public static final String FETCH_GYM_CENTRES_BY_OWNER_ID = "SELECT * FROM FlipFit.GymCentre where ownerId = ?";
 
     public static final String FETCH_ALL_GYM_OWNERS_QUERY = "SELECT * FROM FlipFit.GymOwner";
     public static final String LOGIN_GYM_OWNER = "Select * from GymOwner where name=? and password=?";
