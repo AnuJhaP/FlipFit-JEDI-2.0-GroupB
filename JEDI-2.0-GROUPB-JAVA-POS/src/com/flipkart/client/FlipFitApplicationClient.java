@@ -95,7 +95,7 @@ public class FlipFitApplicationClient {
     }
 
     public static void main(String[] args) throws ParseException {
-        System.out.println("Welcome TO FlipFit");
+        System.out.println("Welcome To FlipFit");
         mainPage();
     }
 }

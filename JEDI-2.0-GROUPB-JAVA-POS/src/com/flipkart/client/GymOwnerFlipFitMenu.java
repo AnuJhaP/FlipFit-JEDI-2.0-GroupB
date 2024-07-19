@@ -47,7 +47,7 @@ public class GymOwnerFlipFitMenu {
 //        System.out.println("WELCOME "+gymOwnerId+" !!\nWhat you what to do\nLogin TIME: "+currentTime);
         while(true){
             System.out.println("" +
-                    "0. View all my Gym Centres\n" +
+                    "0. View all Gym Centres\n" +
                     "1. Sending Gym Owner Approval Request\n" +
                     "2. Add a new Gym Center\n" +
                     "3. Send a Gym Centre Approval Request to Admin\n" +

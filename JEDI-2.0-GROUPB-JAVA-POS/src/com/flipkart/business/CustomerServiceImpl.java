@@ -105,7 +105,6 @@ public class CustomerServiceImpl implements CustomerService {
             return false;
         }
         String scheduleId = scheduleService.getOrCreateSchedule(slotId, date).getScheduleID();
-        // Create booking
         boolean isOverlap = bookingService.checkBookingOverlap(userId, date, slotId);
         if (isOverlap) {
             System.out.println("There is a conflicting booking; cancel it first!!!!");
@@ -146,7 +145,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void registerCustomer(String userName, String password, String email, String phoneNumber) {
-        FlipFitCustomer customer = new FlipFitCustomer(userName,password,email,password,new Role("abs","CUSTOMER"));
+        FlipFitCustomer customer = new FlipFitCustomer(userName+"_Hi" ,userName,password,email,new Role("abs","CUSTOMER"));
         customer.setUserName(userName);
         customer.setPassword(password);
         customer.setEmailId(email);
