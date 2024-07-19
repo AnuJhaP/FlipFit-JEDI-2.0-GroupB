@@ -52,12 +52,12 @@ public class AdminFlipFitMenu {
 
         System.out.println(TB_DASHED_LINE);
         for(FlipFitGymOwner owner: allPendingOwnerRequests) {
-            System.out.printf("%-8s\t", owner.getAadharNo());
-            System.out.printf("%-8s\t", owner.getOwnerId());
-            System.out.printf("%-8s\t", owner.getAccountNo());
-            System.out.printf("%-8s\t", owner.getPAN());
-            System.out.printf("%-8s\t", owner.getGSTIN());
-            System.out.printf("%-8s\t\n", owner.getIFSCCode());
+//            System.out.printf("%-8s\t", owner.getAadharNo());
+//            System.out.printf("%-8s\t", owner.getOwnerId());
+//            System.out.printf("%-8s\t", owner.getAccountNo());
+//            System.out.printf("%-8s\t", owner.getPAN());
+//            System.out.printf("%-8s\t", owner.getGSTIN());
+//            System.out.printf("%-8s\t\n", owner.getIFSCCode());
         }
         System.out.println(TB_DASHED_LINE);
     };
