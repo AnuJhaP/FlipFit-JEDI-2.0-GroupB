@@ -30,8 +30,8 @@ public class util {
                 System.out.printf("%-8s\t", gymCentre.getCity());
                 System.out.printf("%-8s\t", gymCentre.getOwnerID());
                 System.out.printf("%-8s\t", gymCentre.getCapacity());
-                if(gymCentre.getIsApproved() == 0) System.out.println("No\n");
-                else if(gymCentre.getIsApproved() == 1) System.out.println("Yes\n");
+                if(!gymCentre.getIsApproved()) System.out.println("No\n");
+                else if(gymCentre.getIsApproved()) System.out.println("Yes\n");
                 else System.out.println("Pending\n");
             }}
             public static void printCustomerProfile(FlipFitCustomer customer){

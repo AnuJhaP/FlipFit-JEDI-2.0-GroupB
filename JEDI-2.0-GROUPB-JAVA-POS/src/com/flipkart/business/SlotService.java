@@ -9,6 +9,6 @@ public interface SlotService {
     List<FlipFitSlot> getSlotList();
     void bookSlots(String gymCentreId, List<FlipFitSlot> slotList);
     boolean isSlotValid(String slotID,String centreId);
-    void cancelSlot(String slotId, String centerId);
+//    void cancelSlot(String slotId, String centerId);
 
 }

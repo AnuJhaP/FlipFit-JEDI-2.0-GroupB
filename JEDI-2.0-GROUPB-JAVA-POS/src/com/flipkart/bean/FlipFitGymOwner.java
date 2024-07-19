@@ -14,10 +14,10 @@ public class FlipFitGymOwner extends FlipFitUser {
 
     private String panNumber;
 
-    public FlipFitGymOwner(String ownerId, String name, String email, Boolean password,String panNumber) {
-        super(ownerId,name, email, password, "GYMOWNER");
+    public FlipFitGymOwner(String ownerId, String name, String email, String password,String panNumber) {
+        super(ownerId,name, email, password, new Role("nwdin","GYMOWNER"));
         this.panNumber = panNumber;
-        this.isApproved = 0;
+        this.isApproved = false;
     }
 
     private String OwnerId;

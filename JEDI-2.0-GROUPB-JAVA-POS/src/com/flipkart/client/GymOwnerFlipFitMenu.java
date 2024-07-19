@@ -91,7 +91,7 @@ public class GymOwnerFlipFitMenu {
                                     city,
                                     price,
                                     capacity,
-                                    price
+                                    true
                             )
                     );
                     break;

@@ -8,9 +8,9 @@ public class FlipFitCenter {
     private String city;
     private int capacity;
     private int price;
-    private int isApproved;
+    private boolean isApproved;
 
-    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String city, int price, int capacity, int isApproved) {
+    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String city, int price, int capacity, boolean isApproved) {
         this.gymCentreID = gymCentreID;
         this.ownerID = ownerID;
         this.gymCenterName = gymCenterName;
@@ -68,11 +68,11 @@ public class FlipFitCenter {
         this.price = price;
     }
 
-    public int getIsApproved() {
+    public boolean getIsApproved() {
         return isApproved;
     }
 
-    public void setIsApproved(int isApproved) {
+    public void setIsApproved(boolean isApproved) {
         this.isApproved = isApproved;
     }
 

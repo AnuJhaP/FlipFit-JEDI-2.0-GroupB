@@ -3,10 +3,8 @@ package com.flipkart.client;
 import com.flipkart.bean.Role;
 
 import java.text.ParseException;
-import java.util.Random;
 import java.util.Scanner;
 
-import static com.flipkart.bean.Role.*;
 
 public class FlipFitApplicationClient {
 
@@ -46,7 +44,7 @@ public class FlipFitApplicationClient {
 //        Role role=Role.valueOf(scanner.next());
         Role role = new Role("abs",scanner.next());
 
-        switch (role.getRoleId()){
+        switch (role.getDescription()){
             case "ADMIN":
                 System.out.println("Admin is already registered");
                 mainPage();

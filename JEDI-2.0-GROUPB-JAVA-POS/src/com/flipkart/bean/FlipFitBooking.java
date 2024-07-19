@@ -1,27 +1,46 @@
 package com.flipkart.bean;
 
 public class FlipFitBooking {
-    private int userId;
+    private String userId;
 
-    private int bookingId;
+    private String bookingId;
 
     private int isAvailable;
 
-    private int slotId;
+    public String getScheduleID() {
+        return scheduleID;
+    }
 
-    public int getBookingId() {
+    public void setScheduleID(String scheduleID) {
+        this.scheduleID = scheduleID;
+    }
+
+    private String slotId;
+    private String scheduleID;
+
+    public FlipFitBooking(String userID, String scheduleID) {
+        this.userId = userID;
+        this.scheduleID = scheduleID;
+    }
+    public FlipFitBooking(String bookingID,String userID, String scheduleID) {
+        this.bookingId = bookingID;
+        this.userId = userID;
+        this.scheduleID = scheduleID;
+    }
+
+    public String getBookingId() {
         return bookingId;
     }
 
-    public void setBookingId(int bookingId) {
+    public void setBookingId(String bookingId) {
         this.bookingId = bookingId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -33,11 +52,11 @@ public class FlipFitBooking {
         this.isAvailable = isAvailable;
     }
 
-    public int getSlotId() {
+    public String getSlotId() {
         return slotId;
     }
 
-    public void setSlotId(int slotId) {
+    public void setSlotId(String slotId) {
         this.slotId = slotId;
     }
 

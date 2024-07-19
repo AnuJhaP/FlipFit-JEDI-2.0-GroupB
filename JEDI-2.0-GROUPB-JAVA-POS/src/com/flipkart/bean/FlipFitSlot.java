@@ -21,21 +21,21 @@ public class FlipFitSlot {
         StartTime = startTime;
     }
 
-    public String getCenterID() {
-        return CenterID;
+    public String getCenterId() {
+        return CenterId;
     }
 
-    public void setCenterID(String centerID) {
-        CenterID = centerID;
+    public void setCenterId(String centerID) {
+        CenterId = centerID;
     }
 
     private LocalTime StartTime;
-    private String CenterID;
+    private String CenterId;
 
     public FlipFitSlot(String slotId, LocalTime startTime, String centerID) {
         SlotId = slotId;
         StartTime = startTime;
-        CenterID = centerID;
+        CenterId = centerID;
     }
 
 
