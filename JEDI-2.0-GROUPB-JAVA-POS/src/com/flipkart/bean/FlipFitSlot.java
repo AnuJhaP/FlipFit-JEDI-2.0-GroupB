@@ -13,29 +13,29 @@ public class FlipFitSlot {
         SlotId = slotId;
     }
 
-    public LocalTime getStartTime() {
-        return StartTime;
+    public LocalTime getTime() {
+        return time;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        StartTime = startTime;
+    public void setTime(LocalTime startTime) {
+        time = time;
     }
 
-    public String getCenterID() {
-        return CenterID;
+    public String getCenterId() {
+        return CenterId;
     }
 
-    public void setCenterID(String centerID) {
-        CenterID = centerID;
+    public void setCenterId(String centerId) {
+        CenterId = centerId;
     }
 
-    private LocalTime StartTime;
-    private String CenterID;
+    private LocalTime time;
+    private String CenterId;
 
-    public FlipFitSlot(String slotId, LocalTime startTime, String centerID) {
+    public FlipFitSlot(String slotId, LocalTime time, String centerId) {
         this.SlotId = slotId;
-        this.StartTime = startTime;
-        this.CenterID = centerID;
+        this.time = time;
+        this.CenterId = centerId;
     }
 
 
