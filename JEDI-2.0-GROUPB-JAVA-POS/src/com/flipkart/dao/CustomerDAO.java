@@ -7,9 +7,10 @@ import com.flipkart.utils.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.flipkart.constant.SQLConstants.ADD_NEW_CUSTOMER;
+import static com.flipkart.constant.SQLConstants.*;
 
 public class CustomerDAO implements CustomerInterfaceDAO{
     @Override
@@ -35,11 +36,48 @@ public class CustomerDAO implements CustomerInterfaceDAO{
 
     @Override
     public boolean isUserValid(String userName, String password) throws UserInvalidException {
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(CUSTOMER_LOGIN_QUERY);
+            stmt.setString(1, userName);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                stmt.close();
+                return true;
+            }
+            stmt.close();
+        } catch (SQLException exp) {
+            throw new UserInvalidException("User is Invalid. Try again.");
+        } catch (Exception exp) {
+            System.out.println("Oops! An error occurred. Try again later.");
+        }
         return false;
     }
 
     @Override
     public FlipFitCustomer getCustomerById(String userName) {
-        return null;
+        FlipFitCustomer customer = new FlipFitCustomer();
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(GET_CUSTOMER_BY_ID);
+            stmt.setString(1, userName);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            customer.setEmailId(rs.getString("email"));
+            customer.setUserId(rs.getString("Id"));
+            customer.setPassword(rs.getString("password"));
+            customer.setUserName(rs.getString("name"));
+            customer.setCustomerPhone(rs.getString("phone"));
+            customer.setCardDetails(rs.getString("cardDetails"));
+
+            stmt.close();
+        } catch (SQLException exp) {
+            exp.printStackTrace();
+        } catch (Exception exp) {
+            exp.printStackTrace();
+        }
+
+        return customer;
     }
 }
