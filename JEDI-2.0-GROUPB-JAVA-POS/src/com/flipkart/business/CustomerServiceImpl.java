@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public List<FlipFitSlot> getAvailableSlots(String centreID, Date date){
-        return gymCentreService.getAvailableSlotsByCenterAndDate(centreID,date);
+        return gymCentreService.getAvailableSlotsByCentreAndDate(centreID,date);
     }
 
     public List<FlipFitBooking> getCustomerBookings(String customerId){
@@ -61,7 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) {
         try {
             customerDAO.registerCustomer(userName,password,email,phoneNumber,cardNumber);
-        } catch (RegistrationFailedException | RegisterationFailedForCustomerException e) {
+        } catch (RegisterationFailedForCustomerException e) {
             e.getMessage();
         }
 
