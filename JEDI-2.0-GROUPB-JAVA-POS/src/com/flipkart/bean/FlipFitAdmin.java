@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class FlipFitAdmin {
+public class FlipFitAdmin extends FlipFitUser {
     private int userId;
     private String Password;
     private String email;
