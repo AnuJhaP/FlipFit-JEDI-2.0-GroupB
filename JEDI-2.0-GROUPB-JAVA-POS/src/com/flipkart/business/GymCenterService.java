@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface GymCenterService {
 
-    public boolean deleteGymCentre(int centreId);
-    public List<FlipFitSlot> viewAvailableSlots(int centreId);
     List<FlipFitCenter> getAllCentresByOwmerId(String gymOwnerId);
     List<FlipFitCenter> getCentresByCity(String city);
     List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date);

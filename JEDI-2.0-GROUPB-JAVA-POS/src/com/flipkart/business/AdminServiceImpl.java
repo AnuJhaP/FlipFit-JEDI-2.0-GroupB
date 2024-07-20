@@ -4,26 +4,35 @@ import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitGymOwner;
 
 import java.util.List;
+import com.flipkart.dao.AdminDAO;
+import com.flipkart.dao.AdminInterfaceDAO;
+
+import java.util.ArrayList;
 
 public class AdminServiceImpl implements AdminService {
 
-    @Override
-    public void validateCenter(String centerId, Boolean isApproved) {
+        AdminInterfaceDAO adminDAO  = new AdminDAO();
+
+        private List<FlipFitGymOwner> pendinGymOwnerList = new ArrayList<>();
+        private List<FlipFitCenter> pendinGymCentreList = new ArrayList<>();
+
+        public void validateCenter(String gymCentreId, int isApproved){
+            adminDAO.validateGymCentre(gymCentreId,isApproved);
+        }
+
+        public void validateOwner(String gymOwnerId, int isApprove){
+            adminDAO.validateGymOwner(gymOwnerId,isApprove);
+        }
+
+        public List<FlipFitCenter> viewPendingCentres(){
+            pendinGymCentreList = adminDAO.getPendingGymCentres();
+            return pendinGymCentreList;
+        }
+
+        public List<FlipFitGymOwner> viewPendingOwners(){
+            System.out.println("Pending Gym Owner  Request Approvals: ");
+            pendinGymOwnerList = adminDAO.getPendingGymOwners();
+            return pendinGymOwnerList;
+        }
 
     }
-
-    @Override
-    public void validateOwner(String ownerId, Boolean isApproved) {
-
-    }
-
-    @Override
-    public List<FlipFitCenter> viewPendingCentres() {
-        return List.of();
-    }
-
-    @Override
-    public List<FlipFitGymOwner> viewPendingGymOwners() {
-        return List.of();
-    }
-}

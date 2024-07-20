@@ -7,45 +7,37 @@ import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
+import com.flipkart.dao.GymCentreDAO;
+import com.flipkart.dao.GymCentreInterfaceDAO;
+
 public class GymCenterServiceImpl implements GymCenterService{
 
-    @Override
-    public boolean deleteGymCentre(int centreId) {
-        return false;
-    }
+    private static GymCentreInterfaceDAO gymCentreDAO = new GymCentreDAO();
+    private static ScheduleServiceImpl scheduleService = new ScheduleServiceImpl();
 
-    @Override
-    public List<FlipFitSlot> viewAvailableSlots(int centreId) {
-        return List.of();
-    }
-
-    @Override
     public List<FlipFitCenter> getAllCentresByOwmerId(String gymOwnerId) {
-        return List.of();
+        return gymCentreDAO.getAllCentresByOwnerId(gymOwnerId);
     }
 
-    @Override
-    public List<FlipFitCenter> getCentresByCity(String city) {
-        return List.of();
+    public List<FlipFitCenter> getCentresByCity(String city){
+        return gymCentreDAO.getGymCentreListByCity(city);
     }
 
-    @Override
-    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date) {
-        return List.of();
+    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date){
+        return scheduleService.getAllAvailableSlotsByDate(centreID, date);
     }
 
-    @Override
     public void addCenter(FlipFitCenter gymCentre) {
+        gymCentreDAO.addGymCentre(gymCentre);
 
     }
 
-    @Override
-    public void requestGymCentreApproval(String gymCentreId) {
-
+    public void requestGymCentreApproval(String gymCentreId){
+        gymCentreDAO.sendCentreApprovalRequest(gymCentreId);
     }
 
-    @Override
     public FlipFitCenter getGymCentreById(String centreID) {
-        return null;
+        FlipFitCenter gymCentre = gymCentreDAO.getGymCentreByCentreId(centreID);
+        return gymCentre;
     }
 }

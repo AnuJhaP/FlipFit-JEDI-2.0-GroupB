@@ -6,8 +6,8 @@ import com.flipkart.bean.FlipFitGymOwner;
 import java.util.List;
 
 public interface AdminService {
-    void validateCenter(String centerId, Boolean isApproved);
-    void validateOwner(String ownerId, Boolean isApproved);
+    void validateCenter(String centerId, int isApproved);
+    void validateOwner(String ownerId, int isApproved);
     List<FlipFitCenter> viewPendingCentres();
-    List<FlipFitGymOwner> viewPendingGymOwners();
+    List<FlipFitGymOwner> viewPendingOwners();
 }
