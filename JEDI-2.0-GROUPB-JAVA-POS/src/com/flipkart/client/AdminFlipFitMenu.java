@@ -145,7 +145,7 @@ import com.flipkart.business.AdminServiceImpl;
 import com.flipkart.business.GymOwnerService;
 import com.flipkart.business.GymOwnerServiceImpl;
 import com.flipkart.exceptions.LoginFailedException;
-import com.flipkart.utils.util;
+import com.flipkart.utils.FlipFitUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -153,13 +153,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import static com.flipkart.client.FlipFitApplicationClient.scanner;
-import static com.flipkart.constant.Constants.*;
+import static com.flipkart.constant.FlipFitConstant.*;
 
 public class AdminFlipFitMenu {
 
         private static FlipFitAdmin admin = new FlipFitAdmin();
         private static AdminServiceImpl adminService = new AdminServiceImpl();
-        private static GymOwnerServiceInterface gymOwnerService = new GymOwnerService();
+        private static GymOwnerService gymOwnerService = new GymOwnerServiceImpl();
 
         public boolean isUserValid(String userName, String password) {
             if (userName.equals(admin.getUserName()) && password.equals(admin.getPassword())) {
@@ -197,7 +197,7 @@ public class AdminFlipFitMenu {
                 System.out.println("DISAPPROVAL GYM OWNER CONFIRMATION");
             }
 
-            adminService.approveGymOwner(requestGymOwnerId,choice);
+            adminService.validateOwner(requestGymOwnerId,choice);
         }
         private void handleGymCenterApprovalRequests(){
             System.out.println("Press 0 to EXIT_MESSAGE or Choose the Gym Centre To Modify:");
@@ -210,7 +210,7 @@ public class AdminFlipFitMenu {
             } else if (choice == 2) {
                 System.out.println("DISAPPROVAL_GYM_CENTRE_CONFIRMATION");
             }
-            adminService.approveGymCenter(requestGymCenterId,choice);
+            adminService.validateCenter(requestGymCenterId,choice);
         }
 
         private void printOwnerList(List<FlipFitGymOwner> gymOwnerList){
@@ -223,15 +223,15 @@ public class AdminFlipFitMenu {
             System.out.println(DASHED_LINE);
             System.out.println("");
             for(FlipFitGymOwner gymOwner: gymOwnerList) {
-                System.out.printf("%-8s\t", gymOwner.getUserID());
+                System.out.printf("%-8s\t", gymOwner.getUserId());
                 System.out.printf("%-8s\t", gymOwner.getUserName());
-                System.out.printf("%-8s\t", gymOwner.getEmail());
+                System.out.printf("%-8s\t", gymOwner.getEmailId());
                 System.out.printf("%-8s\t", gymOwner.getPanNumber());
-                if(gymOwner.isApproved()==1)
+                if(gymOwner.getIsApproved()==1)
                 {
                     System.out.println("Yes\n");
                 }
-                else if(gymOwner.isApproved() == 0)
+                else if(gymOwner.getIsApproved() == 0)
                 {
                     System.out.println("No\n");
                 } else {
@@ -255,14 +255,14 @@ public class AdminFlipFitMenu {
                         printOwnerList(allGymOwners);
                         break;
                     case 1:
-                        List<FlipFitGymOwner> pendingGymOwners = adminService.viewPendingGymOwners();
+                        List<FlipFitGymOwner> pendingGymOwners = adminService.viewPendingOwners();
                         printOwnerList(pendingGymOwners);
                         if(!pendingGymOwners.isEmpty()) handleGymOwnerApprovalRequests();
                         break;
 
                     case 2:
-                        List<FlipFitCenter> pendingGymCentres = adminService.viewPendingGymCentres();//get listGymCenterIds
-                        util.printGymCentres(pendingGymCentres);
+                        List<FlipFitCenter> pendingGymCentres = adminService.viewPendingCentres();//get listGymCenterIds
+                        FlipFitUtils.printGymCentres(pendingGymCentres);
                         if(!pendingGymCentres.isEmpty()) handleGymCenterApprovalRequests();
                         break;
                     case 3:
