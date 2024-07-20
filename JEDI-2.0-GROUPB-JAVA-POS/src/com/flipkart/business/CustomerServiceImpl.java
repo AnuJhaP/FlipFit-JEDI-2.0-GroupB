@@ -2,7 +2,6 @@ package com.flipkart.business;
 
 import com.flipkart.bean.FlipFitBooking;
 import com.flipkart.bean.FlipFitCustomer;
-import com.flipkart.bean.PaymentType;
 
 import java.sql.Date;
 import java.util.List;
@@ -27,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public List<FlipFitSlot> getAvailableSlots(String centreID, Date date){
-        return gymCentreService.getAvailableSlotsByCentreAndDate(centreID,date);
+        return gymCentreService.getAvailableSlotsByCenterAndDate(centreID,date);
     }
 
     public List<FlipFitBooking> getCustomerBookings(String customerId){

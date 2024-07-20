@@ -3,7 +3,7 @@ package com.flipkart.business;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitSlot;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 
@@ -15,5 +15,6 @@ public interface GymCenterService {
     void addCenter(FlipFitCenter gymCentre);
     void requestGymCentreApproval(String gymCentreId);
     FlipFitCenter getGymCentreById(String centreID);
+//     List<FlipFitSlot> getAvailableSlotsByCenterAndDate(String centreID, Date date);
 }
 

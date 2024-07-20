@@ -3,7 +3,7 @@ package com.flipkart.business;
 import com.flipkart.bean.FlipFitSlot;
 import com.flipkart.bean.Schedule;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public interface ScheduleService {

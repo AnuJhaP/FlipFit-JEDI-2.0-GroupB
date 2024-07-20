@@ -1,37 +1,35 @@
 package com.flipkart.business;
 
 import com.flipkart.bean.FlipFitSlot;
-
+import com.flipkart.dao.SlotDAO;
 import java.util.List;
 
 public class SlotServiceImpl implements SlotService{
-    @Override
+    private static SlotDAO slotDAO = new SlotDAO();
     public List<FlipFitSlot> getAllSlotsByCentre(String centreID) {
-        return List.of();
+        return slotDAO.getSlotByCentreId(centreID);
     }
 
-    @Override
-    public FlipFitSlot getSlotByID(String slotID) {
-        return null;
+    public FlipFitSlot getSlotByID(String slotID){
+        return slotDAO.getSlotById(slotID);
     }
 
-    @Override
-    public List<FlipFitSlot> getSlotList() {
-        return List.of();
+    public FlipFitSlot getSlotByIDandCentreId(String slotID,String centreId){
+        return slotDAO.getSlotByIdandCentreId(slotID,centreId);
     }
 
-    @Override
-    public void bookSlots(String gymCentreId, List<FlipFitSlot> slotList) {
-
+    public List<FlipFitSlot> getSlotList(){
+        return slotDAO.getSlotList();
     }
 
-    @Override
-    public boolean isSlotValid(String slotID, String centreId) {
-        return false;
+    public void addSlotsForGym(String gymCentreId, List<FlipFitSlot> slotList){
+        System.out.println("Adding all slots to gym: " + gymCentreId);
+        for(FlipFitSlot slot : slotList) {
+            slot.setCenterId(gymCentreId);
+            slotDAO.addSlot(slot);
+        }
     }
 
-    @Override
-    public void cancelSlot(String slotId, String centerId) {
-
-    }
-}
+    public boolean isSlotValid(String slotID,String centreId){
+        return getSlotByIDandCentreId(slotID,centreId) != null;
+    }}

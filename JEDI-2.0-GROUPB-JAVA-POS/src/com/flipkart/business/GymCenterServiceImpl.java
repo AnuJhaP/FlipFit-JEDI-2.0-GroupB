@@ -3,8 +3,7 @@ package com.flipkart.business;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitSlot;
 
-import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.flipkart.dao.GymCentreDAO;
@@ -23,9 +22,11 @@ public class GymCenterServiceImpl implements GymCenterService{
         return gymCentreDAO.getGymCentreListByCity(city);
     }
 
-    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date){
+    @Override
+    public List<FlipFitSlot> getAvailableSlotsByCentreAndDate(String centreID, Date date) {
         return scheduleService.getAllAvailableSlotsByDate(centreID, date);
     }
+
 
     public void addCenter(FlipFitCenter gymCentre) {
         gymCentreDAO.addGymCentre(gymCentre);
