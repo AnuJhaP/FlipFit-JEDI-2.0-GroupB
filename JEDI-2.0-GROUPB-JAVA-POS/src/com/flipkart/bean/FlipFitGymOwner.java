@@ -42,8 +42,8 @@ public class FlipFitGymOwner extends FlipFitUser {
         return gymCentreIDs;
     }
 
-    // Setter method for updating list of gym center IDs
-    public void setGymCentreIDs(List<String> gymCentreIDs) {
+
+    public void setGymCenterIDs(List<String> gymCentreIDs) {
         this.gymCentreIDs = gymCentreIDs;
     }
 

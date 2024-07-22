@@ -6,6 +6,7 @@ import java.util.List;
 // GymCentreInterfaceDAO interface defines methods for managing gym centers in the Flipkart system
 public interface GymCentreInterfaceDAO {
 
+
     // Method to retrieve all gym centers owned by a specific owner identified by gymOwnerId
     List<FlipFitCenter> getAllCentresByOwnerId(String gymOwnerId);
 
@@ -27,3 +28,4 @@ public interface GymCentreInterfaceDAO {
     // Method to retrieve a list of gym centers in a specific city identified by city
     List<FlipFitCenter> getGymCentreListByCity(String city);
 }
+

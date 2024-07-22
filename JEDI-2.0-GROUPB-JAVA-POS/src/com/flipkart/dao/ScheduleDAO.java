@@ -9,34 +9,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleDAO implements ScheduleInterfaceDAO {
+    // Method to add a new schedule to the database
 
     public void addSchedule( Schedule schedule){
         try{
+            // Load the MySQL JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
-
+            // Establish a connection to the database
             Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
-
+            // Prepare the SQL statement for inserting a new schedule
             PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_SCHEDULE);
             ps.setString(1, schedule.getScheduleID());
             ps.setDate(2, schedule.getDate());
             ps.setString(3, schedule.getSlotID());
             ps.setInt(4, schedule.getAvailability());
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException e) {        // Handle SQL exceptions
             throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {    // Handle class not found exceptions
             throw new RuntimeException(e);
         }
 
     }
 
+    // Method to retrieve a schedule by its ID
     public Schedule getSchedule(String scheduleId){
         Schedule schedule = null;
         try{
+            // Load the MySQL JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
-
+            // Establish a connection to the database
             Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
-//
+// Prepare the SQL statement for fetching a schedule by ID
             PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_SCHEDULE_BY_ID);
             ps.setString(1, scheduleId);
             ResultSet rs = ps.executeQuery();
@@ -54,7 +58,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
         }
         return schedule;
     }
-
+    // Method to retrieve all schedules for a specific date
     public List<Schedule> getAllScheduleByDate(Date date) {
         ArrayList<Schedule> response = new ArrayList<>();
         try{
@@ -82,7 +86,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
 
         return response;
     }
-
+// Method to modify the availability of a schedule
     public boolean modifySchedule(String scheduleId,int action){
         //1 for increasing, -1 for decreasing
         try{

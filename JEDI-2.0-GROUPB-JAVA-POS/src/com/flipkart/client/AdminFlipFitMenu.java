@@ -5,6 +5,7 @@ import com.flipkart.bean.FlipFitGymOwner;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.business.AdminService;
 import com.flipkart.business.AdminServiceImpl;
+import com.flipkart.dao.AdminDAO;
 import com.flipkart.exceptions.LoginFailedException;
 
 import static com.flipkart.client.FlipFitApplicationClient.scanner;
@@ -31,12 +32,24 @@ import java.util.Scanner;
 import static com.flipkart.client.FlipFitApplicationClient.scanner;
 import static com.flipkart.constant.FlipFitConstant.*;
 
+
+/**
+ * @ JEDI-02
+ * AdminFlipFitMenu class provides functionality for Admin operations in FlipFit application.
+ */
 public class AdminFlipFitMenu {
 
         private static FlipFitAdmin admin = new FlipFitAdmin();
         private static AdminServiceImpl adminService = new AdminServiceImpl();
         private static GymOwnerService gymOwnerService = new GymOwnerServiceImpl();
 
+
+        /**
+         * Validates if the given username and password match the admin's credentials.
+         * @param userName The username to validate.
+         * @param password The password to validate.
+         * @return true if the credentials are valid, false otherwise.
+         */
         public boolean isUserValid(String userName, String password) {
             if (userName.equals(admin.getUserName()) && password.equals(admin.getPassword())) {
                 return true;
@@ -44,8 +57,16 @@ public class AdminFlipFitMenu {
             return false;
         }
 
+
+        /**
+         * Logs in the admin if the credentials are valid.
+         * @param userName The username to login with.
+         * @param password The password to login with.
+         * @return true if login is successful, false otherwise.
+         */
         public boolean adminLogin(String userName, String password) {
-            if (isUserValid(userName, password)) {
+            if (adminService.isUserValid(userName, password)) {
+                //adminService.isUserValid(userName,password);
                 System.out.println("Successfully logged in");
                 adminClientMainPage();
             }
@@ -56,6 +77,9 @@ public class AdminFlipFitMenu {
             return true;
         }
 
+        /**
+         * Handles approval requests for gym owners.
+         */
         private void handleGymOwnerApprovalRequests(){
             // print the list with indexes from 1
             System.out.println("Admin Approval for a Gym Owner ----------");
@@ -75,6 +99,10 @@ public class AdminFlipFitMenu {
 
             adminService.validateOwner(requestGymOwnerId,choice);
         }
+
+        /**
+         * Handles approval requests for gym centers.
+         */
         private void handleGymCenterApprovalRequests(){
             System.out.println("Press 0 to EXIT_MESSAGE or Choose the Gym Centre To Modify:");
             String requestGymCenterId = scanner.next();
@@ -89,6 +117,10 @@ public class AdminFlipFitMenu {
             adminService.validateCenter(requestGymCenterId,choice);
         }
 
+        /**
+         * Prints a list of gym owners.
+         * @param gymOwnerList The list of gym owners to print.
+         */
         private void printOwnerList(List<FlipFitGymOwner> gymOwnerList){
             System.out.println(DASHED_LINE);
             System.out.printf(YELLOW_COLOR + "%-8s\t", "ID");
@@ -117,6 +149,9 @@ public class AdminFlipFitMenu {
             System.out.println(DASHED_LINE);
         }
 
+        /**
+         * Displays the main admin menu and processes user input.
+         */
         public void adminClientMainPage(){
             LocalDateTime currentTime = LocalDateTime.now();
             DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");

@@ -23,9 +23,20 @@ import static com.flipkart.constant.FlipFitConstant.*;
 import static com.flipkart.constant.FlipFitConstant.RESET_COLOR;
 
 
+/**
+ * @ JEDI-02
+ * CustomerFlipFitMenu class provides functionality for Customer operations in FlipFit application.
+ */
 public class CustomerFlipFitMenu {
     private CustomerServiceImpl customerService  =  new CustomerServiceImpl();
 
+
+    /**
+     * Attempts to log in a customer with the provided credentials.
+     * @param userName The username to log in with.
+     * @param password The password to log in with.
+     * @return true if login is successful, false otherwise.
+     */
     public boolean customerLogin(String userName, String password) {
 //        Check if credentials are right
         if (customerService.isUserValid(userName, password)) {
@@ -38,7 +49,9 @@ public class CustomerFlipFitMenu {
         return true;
     }
 
-
+    /**
+     * Registers a new customer with details provided by user input.
+     */
     public void register(){
         System.out.println("Enter your UserName");
         String userName = scanner.next();
@@ -59,6 +72,11 @@ public class CustomerFlipFitMenu {
         customerClientMainPage(userName);
     }
 
+
+    /**
+     * Prints a list of available slots.
+     * @param slots The list of slots to print.
+     */
     private void printSlots(List<FlipFitSlot> slots){
         System.out.println(DASHED_LINE);
         System.out.printf(YELLOW_COLOR + "%-8s\t", "SLOT-ID");
@@ -71,6 +89,10 @@ public class CustomerFlipFitMenu {
         System.out.println(DASHED_LINE);
     }
 
+    /**
+     * Displays submenu for booking a slot.
+     * @param userName The username of the customer booking the slot.
+     */
     private void bookSlotSubMenu(String userName){
         //Get Location for filter
         System.out.println("Provide Location to search :");
@@ -92,6 +114,10 @@ public class CustomerFlipFitMenu {
         chooseSlot(chosenGym,userName,sqlDate,chosenGym);
     }
 
+    /**
+     * Selects a date from user input.
+     * @return The selected date as java.sql.Date.
+     */
     private Date selectDate(){
         //Select Date
         System.out.print("Enter Date (dd/MM/yyyy): ");
@@ -116,6 +142,13 @@ public class CustomerFlipFitMenu {
         return sqlDate;
     }
 
+    /**
+     * Displays submenu for choosing a slot.
+     * @param gymCentreId The ID of the gym center.
+     * @param userName The username of the customer booking the slot.
+     * @param sqlDate The selected date in SQL Date format.
+     * @param centreId The ID of the gym center.
+     */
     private void chooseSlot(String gymCentreId,String userName,Date sqlDate,String centreId){
         System.out.println("Choose from the Below Slots");
         List<FlipFitSlot> availableSlots = customerService.getAvailableSlots(gymCentreId,sqlDate);
@@ -131,6 +164,11 @@ public class CustomerFlipFitMenu {
         if(!customerService.bookSlot(userName,sqlDate,slotID,centreId)) chooseSlot(gymCentreId, userName, sqlDate,centreId);
     }
 
+
+    /**
+     * Prints user plan details.
+     * @param userName The username of the customer.
+     */
     private void printUserPlan(String userName){
         System.out.println("Bookings : ");
         List<UserPlan> allUserPlan= customerService.getCustomerPlan(userName);
@@ -143,7 +181,7 @@ public class CustomerFlipFitMenu {
         System.out.printf("%-8s\t\n", "SCHEDULE_ID" + RESET_COLOR);
         System.out.println(DASHED_LINE);
         for(UserPlan userPlan: allUserPlan) {
-            System.out.printf("%-8s\t", userPlan.getCentreID());
+            System.out.printf("%-8s\t", userPlan.getCenterID());
             System.out.printf("%-8s\t", userPlan.getSlotId());
             System.out.printf("%-8s\t", userPlan.getDate());
             System.out.printf("%-8s\t", userPlan.getTime());
@@ -152,6 +190,10 @@ public class CustomerFlipFitMenu {
         System.out.println(DASHED_LINE);
     }
 
+    /**
+     * Prints bookings submenu.
+     * @param userName The username of the customer.
+     */
     private void printbookingsSubMenu(String userName){
         System.out.println("Bookings : ");
         List<FlipFitBooking> allBookingList= customerService.getCustomerBookings(userName);
@@ -166,6 +208,11 @@ public class CustomerFlipFitMenu {
         System.out.println(DASHED_LINE);
     }
 
+
+    /**
+     * Cancels a booking based on user input.
+     * @param userName The username of the customer cancelling the booking.
+     */
     private void cancelBookingSubMenu(String userName){
         System.out.println("Select the Booking you want to cancel: ");
         printbookingsSubMenu(userName);
@@ -174,6 +221,10 @@ public class CustomerFlipFitMenu {
 
     }
 
+    /**
+     * Prints customer profile details.
+     * @param customer The customer object containing profile details.
+     */
     public void printCustomerProfile(FlipFitCustomer customer){
         System.out.println(GREEN_COLOR +"------------------------------------------------------------------------" + RESET_COLOR);
         System.out.println(YELLOW_COLOR + "USER ID: "+ RESET_COLOR + customer.getUserId());
@@ -185,6 +236,10 @@ public class CustomerFlipFitMenu {
     }
 
 
+    /**
+     * Displays the main customer menu and processes user input.
+     * @param userName The username of the logged-in customer.
+     */
     public void customerClientMainPage(String userName) {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");

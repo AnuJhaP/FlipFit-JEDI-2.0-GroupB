@@ -20,4 +20,5 @@ public interface SlotInterfaceDAO {
 
     // Method to retrieve a slot by its unique identifier slotID and associated gym center identified by gymCentreId
     public FlipFitSlot getSlotByIdandCentreId(String slotID, String gymCentreId);
+
 }

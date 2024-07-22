@@ -2,120 +2,110 @@ package com.flipkart.bean;
 
 // FlipFitCenter class represents a fitness center in the FlipFit system
 public class FlipFitCenter {
-    private String gymCentreID;     // Unique identifier for the fitness center
-    private String ownerID;         // ID of the owner of the fitness center
-    private String gymCenterName;   // Name of the fitness center
-    protected String gstin;         // GST identification number of the fitness center
-    private String city;            // City where the fitness center is located
-    private int capacity;           // Maximum capacity of the fitness center
-    private int price;              // Price or fee charged by the fitness center
-    private int isApproved;         // Approval status of the fitness center (0 or 1)
+        private String gymCenterID;
+        private String ownerID;
+        private String gymCenterName;
+        protected String gstin;
+        private String city;
+        private int capacity;
+        private int price;
+        private int isApproved;
+        public FlipFitCenter() {
 
-    // Default constructor
-    public FlipFitCenter() {
-        // Default constructor is empty
-    }
+        }
+        @Override
+        public String toString() {
+            return "GymCentre{" +
+                    "gymCentreID='" + gymCenterID + '\'' +
+                    ", gymCenterName='" + gymCenterName + '\'' +
+                    ", ownerID='" + ownerID + '\'' +
+                    ", city='" + city + '\'' +
+                    '}';
+        }
+        public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price) {
+            this.gymCenterID = gymCentreID;
+            this.ownerID = ownerID;
+            this.gymCenterName = gymCenterName;
+            this.gstin = gstin;
+            this.city = city;
+            this.capacity = capacity;
+            this.price = price;
+            this.isApproved = 0;
+        }
 
-    // Constructor to initialize all fields of the fitness center
-    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price) {
-        this.gymCentreID = gymCentreID;
+    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price, int isApproved) {
+        this.gymCenterID = gymCentreID;
         this.ownerID = ownerID;
         this.gymCenterName = gymCenterName;
         this.gstin = gstin;
         this.city = city;
         this.capacity = capacity;
         this.price = price;
-        this.isApproved = 0; // Default approval status is set to 0
+
+        this.isApproved = isApproved;
     }
 
-    // Getter method for retrieving GST identification number
-    public String getGstin() {
-        return gstin;
-    }
+        public String getGstin() {
+            return gstin;
+        }
 
-    // Setter method for updating GST identification number
-    public void setGstin(String gstin) {
-        this.gstin = gstin;
-    }
+        public void setGstin(String gstin) {
+            this.gstin = gstin;
+        }
 
-    // Getter method for retrieving price or fee
-    public int getPrice() {
-        return price;
-    }
+        public int getPrice() {
+            return price;
+        }
 
-    // Setter method for updating price or fee
-    public void setPrice(int price) {
-        this.price = price;
-    }
+        public void setPrice(int price) {
+            this.price = price;
+        }
 
-    // Getter method for retrieving fitness center ID
-    public String getGymCentreID() {
-        return gymCentreID;
-    }
+        public String getGymCenterID() {
+            return gymCenterID;
+        }
 
-    // Setter method for updating fitness center ID
-    public void setGymCentreID(String gymCentreID) {
-        this.gymCentreID = gymCentreID;
-    }
+        public void setGymCenterID(String gymCentreID) {
+            this.gymCenterID = gymCentreID;
+        }
 
-    // Getter method for retrieving city
-    public String getCity() {
-        return city;
-    }
+        public String getCity() {
+            return city;
+        }
 
-    // Setter method for updating city
-    public void setCity(String city) {
-        this.city = city;
-    }
+        public void setCity(String city) {
+            this.city = city;
+        }
 
-    // Getter method for retrieving capacity
-    public int getCapacity() {
-        return capacity;
-    }
+        public int getCapacity() {
+            return capacity;
+        }
 
-    // Setter method for updating capacity
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
+        public void setCapacity(int capacity) {
+            this.capacity = capacity;
+        }
 
-    // Getter method for retrieving fitness center name
-    public String getGymCenterName() {
-        return gymCenterName;
-    }
+        public String getGymCenterName() {
+            return gymCenterName;
+        }
 
-    // Setter method for updating fitness center name
-    public void setGymCenterName(String gymCenterName) {
-        this.gymCenterName = gymCenterName;
-    }
+        public void setGymCenterName(String gymCenterName) {
+            this.gymCenterName = gymCenterName;
+        }
 
-    // Getter method for retrieving owner ID
-    public String getOwnerID() {
-        return ownerID;
-    }
+        public String getOwnerID() {
+            return ownerID;
+        }
 
-    // Setter method for updating owner ID
-    public void setOwnerID(String ownerID) {
-        this.ownerID = ownerID;
-    }
+        public void setOwnerID(String ownerID) {
+            this.ownerID = ownerID;
+        }
 
-    // Getter method for retrieving approval status
-    public int isApproved() {
-        return isApproved;
-    }
+        public int isApproved() {
+            return isApproved;
+        }
 
-    // Setter method for updating approval status
-    public void setApproved(int approved) {
-        isApproved = approved;
+        public void setApproved(int approved) {
+            isApproved = approved;
+        }
     }
-
-    // Override toString method to provide a string representation of the object
-    @Override
-    public String toString() {
-        return "FlipFitCenter{" +
-                "gymCentreID='" + gymCentreID + '\'' +
-                ", gymCenterName='" + gymCenterName + '\'' +
-                ", ownerID='" + ownerID + '\'' +
-                ", city='" + city + '\'' +
-                '}';
-    }
-}
