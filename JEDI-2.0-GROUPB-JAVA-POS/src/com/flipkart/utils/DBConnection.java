@@ -55,12 +55,12 @@ public class DBConnection
 
             Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
 
-            PreparedStatement stmt=con.prepareStatement("insert into emp values(?,?)");
-            stmt.setInt(1,101);//1 specifies the first parameter in the query
-            stmt.setString(2,"Ratan");
-
-            int i=stmt.executeUpdate();
-            System.out.println(i+" records inserted");
+//            PreparedStatement stmt=con.prepareStatement("insert into emp values(?,?)");
+//            stmt.setInt(1,101);//1 specifies the first parameter in the query
+//            stmt.setString(2,"Ratan");
+//
+//            int i=stmt.executeUpdate();
+//            System.out.println(i+" records inserted");
 
             con.close();
 

@@ -4,19 +4,18 @@ import com.flipkart.bean.Schedule;
 import com.flipkart.constant.SQLConstants;
 import com.flipkart.utils.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 
 public class ScheduleDAO implements ScheduleInterfaceDAO {
 
     public void addSchedule( Schedule schedule){
         try{
-            Connection conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+
             PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_SCHEDULE);
             ps.setString(1, schedule.getScheduleID());
             ps.setDate(2, schedule.getDate());
@@ -25,6 +24,8 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -32,7 +33,10 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
     public Schedule getSchedule(String scheduleId){
         Schedule schedule = null;
         try{
-            Connection conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_SCHEDULE_BY_ID);
             ps.setString(1, scheduleId);
             ResultSet rs = ps.executeQuery();
@@ -45,6 +49,8 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return schedule;
     }
@@ -52,7 +58,10 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
     public List<Schedule> getAllScheduleByDate(Date date) {
         ArrayList<Schedule> response = new ArrayList<>();
         try{
-            Connection conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_SCHEDULES_BY_DATE);
             ps.setDate(1, new java.sql.Date(date.getTime()));
             ResultSet rs = ps.executeQuery();
@@ -67,6 +76,8 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return response;
@@ -75,7 +86,10 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
     public boolean modifySchedule(String scheduleId,int action){
         //1 for increasing, -1 for decreasing
         try{
-            Connection conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             int availability = getSchedule(scheduleId).getAvailability();
             if(availability < 1 && action == -1){
                 return false;
@@ -85,6 +99,8 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             ps.setString(2, scheduleId);
             ps.executeUpdate();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         return true;
