@@ -6,14 +6,14 @@ package com.flipkart.bean;
  * owner details, name, GST identification number, location, capacity, price, and approval status.
  */
 public class FlipFitCenter {
-    private String gymCentreID;     // Unique identifier for the fitness center
-    private String ownerID;         // ID of the owner of the fitness center
-    private String gymCenterName;   // Name of the fitness center
-    protected String gstin;         // GST identification number of the fitness center
-    private String city;            // City where the fitness center is located
-    private int capacity;           // Maximum capacity of the fitness center
-    private int price;              // Price or fee charged by the fitness center
-    private int isApproved;         // Approval status of the fitness center (0 or 1)
+    private String gymCenterID;
+    private String ownerID;
+    private String gymCenterName;
+    private String gstin;
+    private String city;
+    private int capacity;
+    private int price;
+    private int isApproved;
 
     /**
      * Default constructor for creating a FlipFitCenter object.
@@ -26,7 +26,7 @@ public class FlipFitCenter {
     /**
      * Constructor to initialize all fields of the fitness center.
      *
-     * @param gymCentreID   The unique identifier of the fitness center.
+     * @param gymCenterID   The unique identifier of the fitness center.
      * @param ownerID       The ID of the owner of the fitness center.
      * @param gymCenterName The name of the fitness center.
      * @param gstin         The GST identification number of the fitness center.
@@ -34,15 +34,38 @@ public class FlipFitCenter {
      * @param capacity      The maximum capacity of the fitness center.
      * @param price         The price or fee charged by the fitness center.
      */
-    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price) {
-        this.gymCentreID = gymCentreID;
+    public FlipFitCenter(String gymCenterID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price) {
+        this.gymCenterID = gymCenterID;
         this.ownerID = ownerID;
         this.gymCenterName = gymCenterName;
         this.gstin = gstin;
         this.city = city;
         this.capacity = capacity;
         this.price = price;
-        this.isApproved = 0; // Default approval status is set to 0
+        this.isApproved = 0;
+    }
+
+    /**
+     * Constructor to initialize all fields of the fitness center, including approval status.
+     *
+     * @param gymCenterID   The unique identifier of the fitness center.
+     * @param ownerID       The ID of the owner of the fitness center.
+     * @param gymCenterName The name of the fitness center.
+     * @param gstin         The GST identification number of the fitness center.
+     * @param city          The city where the fitness center is located.
+     * @param capacity      The maximum capacity of the fitness center.
+     * @param price         The price or fee charged by the fitness center.
+     * @param isApproved    The approval status of the fitness center (0 or 1).
+     */
+    public FlipFitCenter(String gymCenterID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price, int isApproved) {
+        this.gymCenterID = gymCenterID;
+        this.ownerID = ownerID;
+        this.gymCenterName = gymCenterName;
+        this.gstin = gstin;
+        this.city = city;
+        this.capacity = capacity;
+        this.price = price;
+        this.isApproved = isApproved;
     }
 
     /**
@@ -86,17 +109,17 @@ public class FlipFitCenter {
      *
      * @return The unique identifier of the fitness center.
      */
-    public String getGymCentreID() {
-        return gymCentreID;
+    public String getGymCenterID() {
+        return gymCenterID;
     }
 
     /**
      * Setter method to update the unique identifier of the fitness center.
      *
-     * @param gymCentreID The new unique identifier to be set.
+     * @param gymCenterID The new unique identifier to be set.
      */
-    public void setGymCentreID(String gymCentreID) {
-        this.gymCentreID = gymCentreID;
+    public void setGymCenterID(String gymCenterID) {
+        this.gymCenterID = gymCenterID;
     }
 
     /**
@@ -197,7 +220,7 @@ public class FlipFitCenter {
     @Override
     public String toString() {
         return "FlipFitCenter{" +
-                "gymCentreID='" + gymCentreID + '\'' +
+                "gymCenterID='" + gymCenterID + '\'' +
                 ", gymCenterName='" + gymCenterName + '\'' +
                 ", ownerID='" + ownerID + '\'' +
                 ", city='" + city + '\'' +

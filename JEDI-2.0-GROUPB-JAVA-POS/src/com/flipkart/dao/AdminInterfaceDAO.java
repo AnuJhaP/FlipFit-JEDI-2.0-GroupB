@@ -2,6 +2,7 @@ package com.flipkart.dao;
 
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitGymOwner;
+import com.flipkart.exceptions.UserInvalidException;
 
 import java.util.List;
 
@@ -40,4 +41,6 @@ public interface AdminInterfaceDAO {
      * @return List of FlipFitCenter objects representing pending gym centers
      */
     public List<FlipFitCenter> getPendingGymCentres();
+    public boolean isUserValid(String userName, String password);
+
 }

@@ -28,7 +28,7 @@ public class FlipFitUtils {
         System.out.println(DASHED_LINE);
         System.out.println("");
         for(FlipFitCenter gymCentre: gymCentres) {
-            System.out.printf("%-8s\t", gymCentre.getGymCentreID());
+            System.out.printf("%-8s\t", gymCentre.getGymCenterID());
             System.out.printf("%-8s\t", gymCentre.getGymCenterName());
             System.out.printf("%-8s\t", gymCentre.getCity());
             System.out.printf("%-8s\t", gymCentre.getOwnerID());

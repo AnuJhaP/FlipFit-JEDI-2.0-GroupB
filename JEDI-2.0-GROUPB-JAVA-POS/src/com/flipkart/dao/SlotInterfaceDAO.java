@@ -44,4 +44,5 @@ public interface SlotInterfaceDAO {
      * @return FlipFitSlot object representing the slot with the specified ID and gym center ID
      */
     public FlipFitSlot getSlotByIdandCentreId(String slotID, String gymCentreId);
+
 }
