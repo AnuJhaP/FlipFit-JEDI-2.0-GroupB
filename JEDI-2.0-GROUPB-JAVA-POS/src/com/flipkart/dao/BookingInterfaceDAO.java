@@ -2,7 +2,7 @@ package com.flipkart.dao;
 import com.flipkart.bean.FlipFitBooking;
 
 import java.util.List;
-public interface BookingInterfaceDAO {
+
 
 
     public interface BookingInterfaceDAO {
@@ -10,4 +10,4 @@ public interface BookingInterfaceDAO {
         List<FlipFitBooking> getBookingByCustomerId(String customerId);
         void cancelBookingById(String bookingID);
     }
-}
+
