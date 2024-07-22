@@ -71,7 +71,7 @@ public class FlipFitCustomer extends FlipFitUser {
         return "FlipFitCustomer{" +
                 "userId='" + getUserId() + '\'' +
                 ", userName='" + getUserName() + '\'' +
-                ", email='" + getEmail() + '\'' +
+                ", email='" + getEmailId() + '\'' +
                 ", customerPhone='" + customerPhone + '\'' +
                 ", cardDetails='" + cardDetails + '\'' +
                 '}';
