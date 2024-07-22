@@ -7,15 +7,34 @@ import com.flipkart.exceptions.UserInvalidException;
 // CustomerInterfaceDAO interface defines methods for managing customer-related operations in the Flipkart system
 public interface CustomerInterfaceDAO {
 
-    // Method to register a new customer with the specified details
-    // Throws RegisterationFailedForCustomerException if registration fails
+    /**
+     * Registers a new customer in the system.
+     *
+     * @param userName    Username of the customer
+     * @param password    Password of the customer
+     * @param email       Email address of the customer
+     * @param phoneNumber Phone number of the customer
+     * @param cardNumber  Card number of the customer
+     * @throws RegisterationFailedForCustomerException if registration fails
+     */
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber)
             throws RegisterationFailedForCustomerException;
 
-    // Method to check if a user with the given username and password is valid
-    // Returns true if the user is valid, otherwise throws UserInvalidException
+    /**
+     * Validates if a user with the given username and password exists in the system.
+     *
+     * @param userName Username of the customer
+     * @param password Password of the customer
+     * @return true if user is valid, false otherwise
+     * @throws UserInvalidException if validation fails
+     */
     public boolean isUserValid(String userName, String password) throws UserInvalidException;
 
-    // Method to retrieve a customer object by their username
+    /**
+     * Retrieves customer details based on the username.
+     *
+     * @param userName Username of the customer
+     * @return FlipFitCustomer object containing customer details
+     */
     public FlipFitCustomer getCustomerById(String userName);
 }

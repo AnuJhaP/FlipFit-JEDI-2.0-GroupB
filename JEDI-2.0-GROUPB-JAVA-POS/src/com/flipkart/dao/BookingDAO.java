@@ -14,6 +14,8 @@ import static com.flipkart.constant.SQLConstants.*;
 
 /**
  * DAO class for handling booking-related operations in the Flipkart system.
+ * This class manages the CRUD operations related to bookings in the Flipkart system,
+ * including adding, retrieving, cancelling bookings, and checking for overlaps.
  */
 public class BookingDAO {
 

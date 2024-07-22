@@ -6,12 +6,26 @@ import java.util.List;
 // FlipFitBookingInterfaceDAO interface defines methods for managing bookings in the Flipkart system
 public interface FlipFitBookingInterfaceDAO {
 
-    // Method to add a booking for a customer identified by userName and scheduleID
+    /**
+     * Adds a booking for a customer into the system.
+     *
+     * @param userName   Username of the customer making the booking
+     * @param scheduleID ID of the schedule being booked
+     */
     void addBooking(String userName, String scheduleID);
 
-    // Method to retrieve bookings associated with a customer identified by customerId
+    /**
+     * Retrieves all bookings made by a customer identified by their customerId.
+     *
+     * @param customerId ID of the customer whose bookings are to be retrieved
+     * @return List of FlipFitBooking objects representing the bookings
+     */
     List<FlipFitBooking> getBookingByCustomerId(String customerId);
 
-    // Method to cancel a booking identified by bookingID
+    /**
+     * Cancels a booking identified by its bookingID.
+     *
+     * @param bookingID ID of the booking to be cancelled
+     */
     void cancelBookingById(String bookingID);
 }
