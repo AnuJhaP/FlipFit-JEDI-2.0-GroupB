@@ -15,7 +15,7 @@ public class GymCenterServiceImpl implements GymCenterService{
     private static ScheduleServiceImpl scheduleService = new ScheduleServiceImpl();
 
     public List<FlipFitCenter> getAllCentresByOwmerId(String gymOwnerId) {
-        return gymCentreDAO.getAllCentresByOwnerId(gymOwnerId);
+        return gymCentreDAO.getAllCentersByOwnerId(gymOwnerId);
     }
 
     public List<FlipFitCenter> getCentresByCity(String city){
@@ -29,7 +29,7 @@ public class GymCenterServiceImpl implements GymCenterService{
 
 
     public void addCenter(FlipFitCenter gymCentre) {
-        gymCentreDAO.addGymCentre(gymCentre);
+        gymCentreDAO.addGymCenter(gymCentre);
 
     }
 
@@ -38,7 +38,7 @@ public class GymCenterServiceImpl implements GymCenterService{
     }
 
     public FlipFitCenter getGymCentreById(String centreID) {
-        FlipFitCenter gymCentre = gymCentreDAO.getGymCentreByCentreId(centreID);
+        FlipFitCenter gymCentre = gymCentreDAO.getGymCentreByCenterId(centreID);
         return gymCentre;
     }
 }

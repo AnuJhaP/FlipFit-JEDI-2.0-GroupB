@@ -7,6 +7,7 @@ import java.util.Scanner;
 import static com.flipkart.bean.Role.*;
 import static com.flipkart.constant.FlipFitConstant.*;
 import com.flipkart.constant.FlipFitConstant;
+import com.flipkart.java17.DateAndTime;
 public class FlipFitApplicationClient {
 
 
@@ -94,6 +95,9 @@ public class FlipFitApplicationClient {
 
     public static void main(String[] args) {
         System.out.println(WELCOME_MESSAGE);
+        DateAndTime dateAndTime = new DateAndTime();
+        DateAndTime.displayCurrentDate8to11();
+//        System.out.println(WELCOME_MESSAGE);
         mainPage();
     }
 }

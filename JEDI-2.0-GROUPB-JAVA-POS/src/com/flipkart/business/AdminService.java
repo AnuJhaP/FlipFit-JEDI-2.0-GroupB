@@ -10,4 +10,6 @@ public interface AdminService {
     void validateOwner(String ownerId, int isApproved);
     List<FlipFitCenter> viewPendingCentres();
     List<FlipFitGymOwner> viewPendingOwners();
+    boolean isUserValid(String userName, String password);
+
 }
