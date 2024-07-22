@@ -1,8 +1,8 @@
 package com.flipkart.bean;
 
-public enum Role1
-{
-    ADMIN,
-    GYMOWNER,
-    CUSTOMER
+// Role1 enum represents different roles in the Flipkart system
+public enum Role1 {
+    ADMIN,      // Represents the administrator role
+    GYMOWNER,   // Represents the gym owner role
+    CUSTOMER    // Represents the customer role
 }

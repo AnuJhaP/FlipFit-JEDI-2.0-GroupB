@@ -1,5 +1,6 @@
 package com.flipkart.bean;
 
+// FlipFitCenter class represents a fitness center in the FlipFit system
 public class FlipFitCenter {
         private String gymCenterID;
         private String ownerID;
@@ -40,6 +41,7 @@ public class FlipFitCenter {
         this.city = city;
         this.capacity = capacity;
         this.price = price;
+
         this.isApproved = isApproved;
     }
 
