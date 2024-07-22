@@ -4,10 +4,7 @@ import com.flipkart.bean.FlipFitGymOwner;
 import com.flipkart.constant.SQLConstants;
 import com.flipkart.utils.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +31,11 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
 
         List<FlipFitGymOwner> resGymOwnerList = new ArrayList<>();
         try {
-            conn = DBConnection.connect();
+//            conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             statement = conn.prepareStatement(SQLConstants.FETCH_ALL_GYM_OWNERS_QUERY);
             ResultSet rs = statement.executeQuery();
             while(rs.next()) {
@@ -75,7 +76,10 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      */
     public boolean loginGymOwner(String username,String password) {
         try {
-            conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             ResultSet result;
             try {
                 statement = conn.prepareStatement(SQLConstants.LOGIN_GYM_OWNER);
@@ -96,6 +100,8 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
             }
         }catch (SQLException e){
             System.out.println("SQL Exception\n");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return false;
     }
@@ -108,7 +114,11 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      */
     public void registerGymOwner(FlipFitGymOwner gymOwner){
         try{
-            conn  = DBConnection.connect();
+//            conn  = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             statement = conn.prepareStatement(SQLConstants.REGISTER_GYM_OWNER);
 
             statement.setString(1,gymOwner.getUserName());
@@ -124,6 +134,8 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
 
         }catch(SQLException e){
             System.out.println("Try again with a different Username \n");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -165,7 +177,10 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
     public void sendOwnerApprovalRequest(String gymOwnerId){
 
         try {
-            conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+
             System.out.println("Sending gym owner approval request..");
             statement = conn.prepareStatement(SQLConstants.SEND_GYM_OWNER_APPROVAL_REQ_QUERY);
             statement.setString(1,gymOwnerId);
@@ -184,7 +199,10 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      */
     public void validateGymOwner(String gymOwnerId, int isApproved) {
         try {
-            conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+
             System.out.println("Fetching gyms owners..");
 
             statement = conn.prepareStatement(SQLConstants.SQL_APPROVE_GYM_OWNER_BY_ID_QUERY);

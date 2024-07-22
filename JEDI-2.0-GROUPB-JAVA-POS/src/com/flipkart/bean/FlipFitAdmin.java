@@ -1,7 +1,7 @@
 package com.flipkart.bean;
 
 public class FlipFitAdmin extends FlipFitUser {
-    private int userId;
+    private String userId;
     private String Password;
     private String email;
 
@@ -21,11 +21,11 @@ public class FlipFitAdmin extends FlipFitUser {
         Password = password;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 }
