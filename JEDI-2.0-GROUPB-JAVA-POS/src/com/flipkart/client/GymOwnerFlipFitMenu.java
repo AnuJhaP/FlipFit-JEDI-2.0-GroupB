@@ -16,6 +16,11 @@ import com.flipkart.utils.FlipFitUtils;
 import com.flipkart.dao.GymOwnerDAO;
 import com.flipkart.exceptions.LoginFailedException;
 
+
+/**
+ * @ JEDI-02
+ * GymOwnerFlipFitMenu class handles operations for Gym Owners in FlipFit application.
+ */
 public class GymOwnerFlipFitMenu {
     GymOwnerDAO gymOwnerDAO = new GymOwnerDAO();
     private GymOwnerServiceImpl gymOwnerService = new GymOwnerServiceImpl();
@@ -24,7 +29,12 @@ public class GymOwnerFlipFitMenu {
 
 
 
-
+    /**
+     * Handles the login process for Gym Owners.
+     * @param userName Gym Owner's username
+     * @param password Gym Owner's password
+     * @return true if login is successful, false otherwise
+     */
     public boolean gymOwnerLogin(String userName, String password) {
         if (gymOwnerService.loginGymOwner(userName,password)) {
             System.out.println("Successfully logged in");
@@ -36,6 +46,9 @@ public class GymOwnerFlipFitMenu {
         return true;
     }
 
+    /**
+     * Handles the registration process for Gym Owners.
+     */
     public void register() {
         System.out.println("Enter your UserName");
         String userName = scanner.next();
@@ -57,7 +70,10 @@ public class GymOwnerFlipFitMenu {
     }
 
 
-
+    /**
+     * Displays the main menu for Gym Owners after successful login.
+     * @param gymOwnerId Gym Owner's ID
+     */
     public void gymOwnerClientMainPage(String gymOwnerId) {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
