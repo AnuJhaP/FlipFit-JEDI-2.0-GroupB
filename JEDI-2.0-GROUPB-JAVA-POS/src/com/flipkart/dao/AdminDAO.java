@@ -1,6 +1,8 @@
 package com.flipkart.dao;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitGymOwner;
+import com.flipkart.exceptions.UserInvalidException;
+
 import java.util.List;
     public class AdminDAO implements AdminInterfaceDAO {
 
@@ -17,11 +19,16 @@ import java.util.List;
         }
 
         public void validateGymCentre(String gymCentreId, int isApproved) {
-            gymCentreDAO.validateGymCentre(gymCentreId,isApproved);
+            gymCentreDAO.validateGymCenter(gymCentreId,isApproved);
         }
 
         public List<FlipFitCenter> getPendingGymCentres() {
-            return gymCentreDAO.getPendingGymCentreList();
+            return gymCentreDAO.getPendingGymCenterList();
+        }
+
+        @Override
+        public boolean isUserValid(String userName, String password)  {
+            return true;
         }
 
     }

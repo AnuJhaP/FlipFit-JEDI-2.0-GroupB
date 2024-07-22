@@ -35,7 +35,7 @@ public class FlipFitGymOwner extends FlipFitUser {
         return gymCentreIDs;
     }
 
-    public void setGymCentreIDs(List<String> gymCentreIDs) {
+    public void setGymCenterIDs(List<String> gymCentreIDs) {
         this.gymCentreIDs = gymCentreIDs;
     }
 

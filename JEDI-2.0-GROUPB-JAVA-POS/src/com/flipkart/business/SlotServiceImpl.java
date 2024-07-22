@@ -7,7 +7,7 @@ import java.util.List;
 public class SlotServiceImpl implements SlotService{
     private static SlotDAO slotDAO = new SlotDAO();
     public List<FlipFitSlot> getAllSlotsByCentre(String centreID) {
-        return slotDAO.getSlotByCentreId(centreID);
+        return slotDAO.getSlotByCenterId(centreID);
     }
 
     public FlipFitSlot getSlotByID(String slotID){
@@ -15,7 +15,7 @@ public class SlotServiceImpl implements SlotService{
     }
 
     public FlipFitSlot getSlotByIDandCentreId(String slotID,String centreId){
-        return slotDAO.getSlotByIdandCentreId(slotID,centreId);
+        return slotDAO.getSlotByIdandCenterId(slotID,centreId);
     }
 
     public List<FlipFitSlot> getSlotList(){

@@ -93,7 +93,7 @@ public class FlipFitApplicationClient {
     }
 
     public static void main(String[] args) {
-        System.out.println(WELCOME_MESSAGE);
+//        System.out.println(WELCOME_MESSAGE);
         mainPage();
     }
 }

@@ -13,12 +13,12 @@ public class UserPlan {
         this.slotId = slotId;
     }
 
-    public String getCentreID() {
-        return centreID;
+    public String getCenterID() {
+        return centerId;
     }
 
-    public void setCentreID(String centreID) {
-        this.centreID = centreID;
+    public void setCenterID(String centerID) {
+        this.centerId = centerID;
     }
 
     public LocalTime getTime() {
@@ -46,17 +46,17 @@ public class UserPlan {
     }
 
     private String slotId;
-    private String centreID;
+    private String centerId;
     private LocalTime time;
     private String scheduleID;
     private Date date;
 
-    public UserPlan(String slotId,String centreID,LocalTime time,String scheduleID,Date date){
+    public UserPlan(String slotId,String centerID,LocalTime time,String scheduleID,Date date){
         this.time = time;
         this.slotId = slotId;
         this.date = date;
         this.scheduleID = scheduleID;
-        this.centreID  = centreID;
+        this.centerId  = centerID;
     }
 
 }

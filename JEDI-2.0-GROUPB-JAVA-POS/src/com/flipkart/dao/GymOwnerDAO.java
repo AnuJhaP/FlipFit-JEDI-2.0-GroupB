@@ -40,8 +40,8 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
             ResultSet rs = statement.executeQuery();
             while(rs.next()) {
                 FlipFitGymOwner owner = new FlipFitGymOwner(
-                        rs.getString("id"),
-                        rs.getString("name"),
+                        rs.getString("userId"),
+                        rs.getString("userName"),
                         rs.getString("email"),
                         rs.getString("password"),
                         rs.getString("panNumber"),
@@ -70,11 +70,11 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
     /**
      * Authenticates the user by fetching details from the db
      * and logs in that user, if successful.
-     * @param  username     unique username of the user
+     * @param  userName     unique username of the user
      * @param  password     password of the user
      * @return              whether login was successful or not (true/false)
      */
-    public boolean loginGymOwner(String username,String password) {
+    public boolean loginGymOwner(String userName,String password) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -83,11 +83,11 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
             ResultSet result;
             try {
                 statement = conn.prepareStatement(SQLConstants.LOGIN_GYM_OWNER);
-                statement.setString(1, username);
+                statement.setString(1, userName);
                 statement.setString(2, password);
                 result = statement.executeQuery();
                 while (result.next()) {
-                    if (username.equals(result.getString("Id")) && password.equals(result.getString("password"))) {
+                    if (userName.equals(result.getString("userName")) && password.equals(result.getString("password"))) {
                         System.out.println("Login Success\n");
                         return true;
                     } else {
@@ -150,11 +150,14 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
 
         List<FlipFitGymOwner> pendingList = new ArrayList<>();
         try {
-            conn = DBConnection.connect();
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//
             statement = conn.prepareStatement(SQLConstants.FETCH_ALL_PENDING_GYM_OWNERS_QUERY);
             ResultSet rs = statement.executeQuery();
             while(rs.next()) {
-                FlipFitGymOwner owner = new FlipFitGymOwner(rs.getString("id"),rs.getString("name"), rs.getString("email"), rs.getString("password"), rs.getString("panNumber"), rs.getString("cardDetails"));
+                FlipFitGymOwner owner = new FlipFitGymOwner(rs.getString("userId"),rs.getString("userName"), rs.getString("email"), rs.getString("password"), rs.getString("panNumber"), rs.getString("cardDetails"));
                 owner.setIsApproved(rs.getInt("isApproved"));
                 pendingList.add(owner);
             }

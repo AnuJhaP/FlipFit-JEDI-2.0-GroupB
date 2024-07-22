@@ -1,7 +1,7 @@
 package com.flipkart.bean;
 
 public class FlipFitCenter {
-        private String gymCentreID;
+        private String gymCenterID;
         private String ownerID;
         private String gymCenterName;
         protected String gstin;
@@ -15,14 +15,14 @@ public class FlipFitCenter {
         @Override
         public String toString() {
             return "GymCentre{" +
-                    "gymCentreID='" + gymCentreID + '\'' +
+                    "gymCentreID='" + gymCenterID + '\'' +
                     ", gymCenterName='" + gymCenterName + '\'' +
                     ", ownerID='" + ownerID + '\'' +
                     ", city='" + city + '\'' +
                     '}';
         }
         public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price) {
-            this.gymCentreID = gymCentreID;
+            this.gymCenterID = gymCentreID;
             this.ownerID = ownerID;
             this.gymCenterName = gymCenterName;
             this.gstin = gstin;
@@ -31,6 +31,17 @@ public class FlipFitCenter {
             this.price = price;
             this.isApproved = 0;
         }
+
+    public FlipFitCenter(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price, int isApproved) {
+        this.gymCenterID = gymCentreID;
+        this.ownerID = ownerID;
+        this.gymCenterName = gymCenterName;
+        this.gstin = gstin;
+        this.city = city;
+        this.capacity = capacity;
+        this.price = price;
+        this.isApproved = isApproved;
+    }
 
         public String getGstin() {
             return gstin;
@@ -48,12 +59,12 @@ public class FlipFitCenter {
             this.price = price;
         }
 
-        public String getGymCentreID() {
-            return gymCentreID;
+        public String getGymCenterID() {
+            return gymCenterID;
         }
 
-        public void setGymCentreID(String gymCentreID) {
-            this.gymCentreID = gymCentreID;
+        public void setGymCenterID(String gymCentreID) {
+            this.gymCenterID = gymCentreID;
         }
 
         public String getCity() {
