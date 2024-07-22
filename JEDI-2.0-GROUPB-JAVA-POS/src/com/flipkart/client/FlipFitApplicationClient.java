@@ -8,6 +8,11 @@ import static com.flipkart.bean.Role.*;
 import static com.flipkart.constant.FlipFitConstant.*;
 import com.flipkart.constant.FlipFitConstant;
 import com.flipkart.java17.DateAndTime;
+
+/**
+ * @ JEDI-02
+ * FlipFitApplicationClient class manages the main application flow for FlipFit.
+ */
 public class FlipFitApplicationClient {
 
 
@@ -17,7 +22,9 @@ public class FlipFitApplicationClient {
     private static CustomerFlipFitMenu customerClient = new CustomerFlipFitMenu();
     private static GymOwnerFlipFitMenu gymOwnerClient = new GymOwnerFlipFitMenu();
 
-
+    /**
+     * Displays the main page of the application with options: Login, Registration, and Exit.
+     */
     private static void mainPage(){
         System.out.println("1. Login\n2. Registration\n3. Exit");
         int choice = scanner.nextInt();
@@ -38,6 +45,9 @@ public class FlipFitApplicationClient {
         mainPage();
     }
 
+    /**
+     * Handles the login process based on user role.
+     */
     private static void login(){
         try {
             System.out.println("Enter your Role");
@@ -68,6 +78,9 @@ public class FlipFitApplicationClient {
         }
     }
 
+    /**
+     * Handles the registration process based on user role.
+     */
     private static void registration(){
         try {
             System.out.println("Enter your role");
@@ -93,6 +106,10 @@ public class FlipFitApplicationClient {
         }
     }
 
+    /**
+     * Entry point of the FlipFit application.
+     * @param args Command line arguments (not used in this application).
+     */
     public static void main(String[] args) {
         System.out.println(WELCOME_MESSAGE);
         DateAndTime dateAndTime = new DateAndTime();
