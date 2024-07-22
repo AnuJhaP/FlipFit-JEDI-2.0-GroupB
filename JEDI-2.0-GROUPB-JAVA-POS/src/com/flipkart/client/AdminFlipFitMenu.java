@@ -5,6 +5,7 @@ import com.flipkart.bean.FlipFitGymOwner;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.business.AdminService;
 import com.flipkart.business.AdminServiceImpl;
+import com.flipkart.dao.AdminDAO;
 import com.flipkart.exceptions.LoginFailedException;
 
 import static com.flipkart.client.FlipFitApplicationClient.scanner;
@@ -45,7 +46,8 @@ public class AdminFlipFitMenu {
         }
 
         public boolean adminLogin(String userName, String password) {
-            if (isUserValid(userName, password)) {
+            if (adminService.isUserValid(userName, password)) {
+                //adminService.isUserValid(userName,password);
                 System.out.println("Successfully logged in");
                 adminClientMainPage();
             }

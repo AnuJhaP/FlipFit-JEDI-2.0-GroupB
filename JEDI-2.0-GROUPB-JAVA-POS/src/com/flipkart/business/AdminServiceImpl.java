@@ -6,6 +6,7 @@ import com.flipkart.bean.FlipFitGymOwner;
 import java.util.List;
 import com.flipkart.dao.AdminDAO;
 import com.flipkart.dao.AdminInterfaceDAO;
+import com.flipkart.exceptions.UserInvalidException;
 
 import java.util.ArrayList;
 
@@ -35,4 +36,9 @@ public class AdminServiceImpl implements AdminService {
             return pendinGymOwnerList;
         }
 
+    @Override
+    public boolean isUserValid(String userName, String password) {
+        return adminDAO.isUserValid(userName,password);
     }
+
+}

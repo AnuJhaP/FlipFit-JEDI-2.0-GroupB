@@ -22,7 +22,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 String slotId = rs.getString("slotId");
-                String centreId = rs.getString("centreId");
+                String centreId = rs.getString("gymCenterId");
                 LocalTime time = rs.getTime("time").toLocalTime();
 
                 slotList.add(new FlipFitSlot(slotId, time, centreId));
@@ -37,7 +37,7 @@ public class SlotDAO implements SlotInterfaceDAO{
     }
 
     @Override
-    public List<FlipFitSlot> getSlotByCentreId(String gymCentreId) {
+    public List<FlipFitSlot> getSlotByCenterId(String gymCentreId) {
         List<FlipFitSlot> slotList = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -49,7 +49,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 String slotId = rs.getString("slotId");
-                String centreId = rs.getString("centreId");
+                String centreId = rs.getString("gymCenterId");
                 LocalTime time = rs.getTime("time").toLocalTime();
 
                 slotList.add(new FlipFitSlot(slotId, time, centreId));
@@ -94,7 +94,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             ps.setString(1,slotID);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                String centreId = rs.getString("centreId");
+                String centreId = rs.getString("gymCenterId");
                 LocalTime time = rs.getTime("time").toLocalTime();
                 slot = new FlipFitSlot(slotID, time, centreId);
             }
@@ -109,7 +109,7 @@ public class SlotDAO implements SlotInterfaceDAO{
     }
 
     @Override
-    public FlipFitSlot getSlotByIdandCentreId(String slotID, String centreID) {
+    public FlipFitSlot getSlotByIdandCenterId(String slotID, String centreID) {
         FlipFitSlot slot = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");

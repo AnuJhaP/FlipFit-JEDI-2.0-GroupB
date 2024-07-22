@@ -97,6 +97,7 @@ public class FlipFitApplicationClient {
         System.out.println(WELCOME_MESSAGE);
         DateAndTime dateAndTime = new DateAndTime();
         DateAndTime.displayCurrentDate8to11();
+//        System.out.println(WELCOME_MESSAGE);
         mainPage();
     }
 }
