@@ -1,4 +1,4 @@
-package com.flipkart.dateandtime;
+package com.flipkart.java17;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,15 +6,16 @@ import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
-public class dateandtime {
-    private static void displayCurrentDate8to11() {
+public class DateAndTime {
+
+    public static void displayCurrentDate8to11() {
 
 
         // older approach
 
-        Date currentDate=new Date();
-
-        System.out.println("current date-->" +currentDate.getDate());
+//        Date currentDate=new Date();
+//
+//        System.out.println("current date-->" +currentDate.getDate());
 
         // new way
 
