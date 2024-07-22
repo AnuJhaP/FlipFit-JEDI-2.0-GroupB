@@ -8,9 +8,17 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data Access Object (DAO) for managing schedules in the FlipFit application.
+ * Provides methods to add, retrieve, and modify schedules in the database.
+ */
 public class ScheduleDAO implements ScheduleInterfaceDAO {
-    // Method to add a new schedule to the database
 
+    /**
+     * Adds a new schedule to the database.
+     *
+     * @param schedule The Schedule object containing the schedule details to be added.
+     */
     public void addSchedule( Schedule schedule){
         try{
             // Load the MySQL JDBC driver
@@ -32,7 +40,14 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
 
     }
 
-    // Method to retrieve a schedule by its ID
+
+    /**
+     * Retrieves a schedule from the database based on its ID.
+     *
+     * @param scheduleId The ID of the schedule to be retrieved.
+     * @return The Schedule object with the details of the specified schedule, or null if not found.
+     */
+
     public Schedule getSchedule(String scheduleId){
         Schedule schedule = null;
         try{
@@ -58,7 +73,12 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
         }
         return schedule;
     }
-    // Method to retrieve all schedules for a specific date
+    /**
+     * Retrieves all schedules for a specific date.
+     *
+     * @param date The date for which schedules are to be retrieved.
+     * @return A list of Schedule objects for the specified date.
+     */
     public List<Schedule> getAllScheduleByDate(Date date) {
         ArrayList<Schedule> response = new ArrayList<>();
         try{
@@ -86,7 +106,13 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
 
         return response;
     }
-// Method to modify the availability of a schedule
+    /**
+     * Modifies the availability of a schedule.
+     *
+     * @param scheduleId The ID of the schedule to be modified.
+     * @param action The action to perform: 1 for increasing availability, -1 for decreasing it.
+     * @return true if the modification was successful, false if availability cannot be decreased further.
+     */
     public boolean modifySchedule(String scheduleId,int action){
         //1 for increasing, -1 for decreasing
         try{
