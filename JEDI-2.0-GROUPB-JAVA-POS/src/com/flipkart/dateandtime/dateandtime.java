@@ -8,12 +8,9 @@ import java.util.Date;
 
 public class dateandtime {
     private static void displayCurrentDate8to11() {
-
-
         // older approach
 
         Date currentDate=new Date();
-
         System.out.println("current date-->" +currentDate.getDate());
 
         // new way
