@@ -26,6 +26,7 @@ import java.util.List;
             return gymCentreDAO.getPendingGymCenterList();
         }
 
+        //admin returns true
         @Override
         public boolean isUserValid(String userName, String password)  {
             return true;
