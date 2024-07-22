@@ -36,5 +36,4 @@ public class SQLConstants {
 
     public static final String GET_BOOKING_BY_BOOKING_ID ="Select * From flipfit-schema.FlipFitBooking where bookingId = ?";
     public static final String GET_USERPLAN_BY_CUSTOMER_ID = "select * from slot join schedule where slot.slotId=schedule.slotId and schedule.scheduleId=?";
-
 }

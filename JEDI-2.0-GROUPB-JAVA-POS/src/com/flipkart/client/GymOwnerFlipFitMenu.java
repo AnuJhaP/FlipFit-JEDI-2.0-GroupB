@@ -3,27 +3,44 @@ package com.flipkart.client;
 import com.flipkart.bean.FlipFitCenter;
 import com.flipkart.bean.FlipFitSlot;
 import com.flipkart.business.GymCenterServiceImpl;
+import com.flipkart.business.GymOwnerService;
 import com.flipkart.business.GymOwnerServiceImpl;
 import com.flipkart.business.SlotServiceImpl;
-
+import static com.flipkart.client.FlipFitApplicationClient.scanner;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import com.flipkart.utils.FlipFitUtils;
+import com.flipkart.dao.GymOwnerDAO;
+import com.flipkart.exceptions.LoginFailedException;
 
 public class GymOwnerFlipFitMenu {
-    private Scanner scanner = new Scanner(System.in);
+    GymOwnerDAO gymOwnerDAO = new GymOwnerDAO();
     private GymOwnerServiceImpl gymOwnerService = new GymOwnerServiceImpl();
     private SlotServiceImpl slotService = new SlotServiceImpl();
     private GymCenterServiceImpl gymCentreService = new GymCenterServiceImpl();
-    public void gymOwnerRegister() {
-        Scanner scanner = new Scanner(System.in);
+
+
+
+
+    public boolean gymOwnerLogin(String userName, String password) {
+        if (gymOwnerService.loginGymOwner(userName,password)) {
+            System.out.println("Successfully logged in");
+            gymOwnerClientMainPage(userName);
+        } else {
+            new LoginFailedException("Gymowner Login Failed");
+            return false;
+        }
+        return true;
+    }
+
+    public void register() {
         System.out.println("Enter your UserName");
         String userName = scanner.next();
 
-        System.out.println("Enter your Password");
+        System.out.println("Enter your Passkey");
         String password = scanner.next();
 
         System.out.println("Enter your Email");
@@ -40,11 +57,12 @@ public class GymOwnerFlipFitMenu {
     }
 
 
+
     public void gymOwnerClientMainPage(String gymOwnerId) {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = currentTime.format(myFormat);
-//        System.out.println("WELCOME "+gymOwnerId+" !!\nWhat you what to do\nLogin TIME: "+currentTime);
+        System.out.println("WELCOME "+gymOwnerId+" !!\nWhat you what to do\nLogin TIME: "+currentTime);
         while(true){
             System.out.println("" +
                     "0. View all my Gym Centres\n" +
@@ -56,10 +74,11 @@ public class GymOwnerFlipFitMenu {
             );
             int choice = scanner.nextInt();
             switch (choice){
-
+                /* Take input from user for all service parameters ( Make the menu ) */
 
                 case 0:
                     List<FlipFitCenter> allGymCentres = gymCentreService.getAllCentresByOwmerId(gymOwnerId);
+                    FlipFitUtils.printGymCentres(allGymCentres);
                     break;
 
                 case 1:
@@ -73,6 +92,9 @@ public class GymOwnerFlipFitMenu {
 
                     System.out.println("Enter Gym Centre name: ");
                     String gymCentreName = scanner.next();
+
+                    System.out.println("Enter Gym Centre GSTIN: ");
+                    String gstin = scanner.next();
 
                     System.out.println("Enter Gym Centre city: ");
                     String city = scanner.next();
@@ -88,8 +110,8 @@ public class GymOwnerFlipFitMenu {
                                     gymId,
                                     gymOwnerId,
                                     gymCentreName,
+                                    gstin,
                                     city,
-                                    price,
                                     capacity,
                                     price
                             )
@@ -138,7 +160,7 @@ public class GymOwnerFlipFitMenu {
                         }
                     }
 
-                    slotService.bookSlots(centreId, newSlotList);
+                    slotService.addSlotsForGym(centreId, newSlotList);
                     break;
                 case 5:
                     System.out.println("PREVIOUS_MENU_MESSAGE");
@@ -148,5 +170,4 @@ public class GymOwnerFlipFitMenu {
                     break;
             }
         }
-    }
-}
+    }}
