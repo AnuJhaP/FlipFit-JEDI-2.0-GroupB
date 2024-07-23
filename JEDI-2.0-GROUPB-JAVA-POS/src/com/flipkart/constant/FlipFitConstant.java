@@ -63,7 +63,7 @@ public class FlipFitConstant {
     /**
      * Welcome message displayed in green color.
      */
-    public static String WELCOME_MESSAGE = GREEN_COLOR + "\nWELCOME TO THE GMS APPLICATION\n" + RESET_COLOR;
+    public static String WELCOME_MESSAGE = GREEN_COLOR + "\nWELCOME TO THE FLIPFIT APPLICATION\n" + RESET_COLOR;
 
     /**
      * Confirmation message when admin approves a gym center, displayed in green color.
