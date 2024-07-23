@@ -10,13 +10,20 @@ import com.flipkart.constant.FlipFitConstant;
 import com.flipkart.java17.DateAndTime;
 
 /**
- * @ JEDI-02
+ * @author JEDI-02
  * FlipFitApplicationClient class manages the main application flow for FlipFit.
  */
 public class FlipFitApplicationClient {
 
-
+    /**
+     * Static variable to keep track of the next available user ID.
+     * Initialized to 0.
+     */
     public static int userId = 0;
+    /**
+     * Scanner object to read input from the console.
+     * Initialized with the standard input stream.
+     */
     public static Scanner scanner = new Scanner(System.in);
     private static AdminFlipFitMenu adminClient = new AdminFlipFitMenu();
     private static CustomerFlipFitMenu customerClient = new CustomerFlipFitMenu();

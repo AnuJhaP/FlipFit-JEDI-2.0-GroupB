@@ -4,7 +4,9 @@ import com.flipkart.bean.FlipFitCustomer;
 import com.flipkart.exceptions.RegisterationFailedForCustomerException;
 import com.flipkart.exceptions.UserInvalidException;
 
-// CustomerInterfaceDAO interface defines methods for managing customer-related operations in the Flipkart system
+/**
+ * CustomerInterfaceDAO interface defines methods for managing customer-related operations in the Flipkart system
+ */
 public interface CustomerInterfaceDAO {
 
     /**

@@ -8,6 +8,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * GymOwner dao interface implementation
+ */
 public class GymOwnerDAO implements GymOwnerInterfaceDAO{
 
     /**
@@ -61,7 +64,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
     /**
      * Sets the gymOwnerList with an existing list
      * @param  gymOwnerList     existing list
-     * @return                  void
      */
     public void setGymOwnerList(List<FlipFitGymOwner> gymOwnerList) {
         this.gymOwnerList = gymOwnerList;
@@ -110,7 +112,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      * Registers a new gym owner with the GMS platform and adds
      * the details to DB. Initially, this gym owner is not approved
      * @param  gymOwner     complete GymOwner object of a new gym owner
-     * @return              void
      */
     public void registerGymOwner(FlipFitGymOwner gymOwner){
         try{
@@ -175,7 +176,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      * A gym owner sends an approval request to the admin so that
      * they get approved in order to list their gym centres with GMS
      * @param  gymOwnerId   the id of the GymOwner who wants to send a req
-     * @return              void
      */
     public void sendOwnerApprovalRequest(String gymOwnerId){
 
@@ -198,7 +198,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO{
      * Admin calls this function to validate (approve/disapprove) a gymOwner
      * @param  gymOwnerId   the id of the GymOwner who is being validated
      * @param  isApproved   approval status, 0: Not Approved, 1: Approved, 2: Pending
-     * @return              void
      */
     public void validateGymOwner(String gymOwnerId, int isApproved) {
         try {

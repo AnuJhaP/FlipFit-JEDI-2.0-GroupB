@@ -42,6 +42,12 @@ public interface AdminService {
      * @return List of pending gym owners
      */
     List<FlipFitGymOwner> viewPendingOwners();
+
+    /** Function to check validity of user
+     * @param userName name of user
+     * @param password passowrd of user
+     * @return boolean
+     */
     boolean isUserValid(String userName, String password);
 
 }

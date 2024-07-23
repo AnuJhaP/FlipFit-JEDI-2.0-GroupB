@@ -3,7 +3,9 @@ package com.flipkart.dao;
 import com.flipkart.bean.FlipFitBooking;
 import java.util.List;
 
-// FlipFitBookingInterfaceDAO interface defines methods for managing bookings in the Flipkart system
+/**
+ *  FlipFitBookingInterfaceDAO interface defines methods for managing bookings in the Flipkart system
+ */
 public interface FlipFitBookingInterfaceDAO {
 
     /**
