@@ -14,7 +14,7 @@ public interface GymCentreInterfaceDAO {
      * @param gymOwnerId ID of the gym owner whose gym centers are to be retrieved
      * @return List of FlipFitCenter objects representing the gym centers
      */
-    List<FlipFitCenter> getAllCentresByOwnerId(String gymOwnerId);
+    List<FlipFitCenter> getAllCentersByOwnerId(String gymOwnerId);
 
     /**
      * Retrieves a gym center by its unique identifier gymCentreId.
@@ -22,21 +22,21 @@ public interface GymCentreInterfaceDAO {
      * @param gymCentreId ID of the gym center to retrieve
      * @return FlipFitCenter object representing the gym center
      */
-    FlipFitCenter getGymCentreByCentreId(String gymCentreId);
+    FlipFitCenter getGymCentreByCenterId(String gymCentreId);
 
     /**
      * Adds a new gym center to the system.
      *
      * @param centre FlipFitCenter object representing the gym center to be added
      */
-    void addGymCentre(FlipFitCenter centre);
+    void addGymCenter(FlipFitCenter centre);
 
     /**
      * Retrieves a list of pending gym centers awaiting approval.
      *
      * @return List of FlipFitCenter objects representing the pending gym centers
      */
-    List<FlipFitCenter> getPendingGymCentreList();
+    List<FlipFitCenter> getPendingGymCenterList();
 
     /**
      * Validates (approves or rejects) a gym center identified by gymCentreId.
@@ -44,7 +44,7 @@ public interface GymCentreInterfaceDAO {
      * @param gymCentreId ID of the gym center to validate
      * @param isApproved  Approval status (1 for approved, 0 for rejected)
      */
-    void validateGymCentre(String gymCentreId, int isApproved);
+    void validateGymCenter(String gymCentreId, int isApproved);
 
     /**
      * Sends a request for approval of a gym center identified by gymCentreId.

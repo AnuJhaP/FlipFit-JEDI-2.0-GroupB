@@ -62,7 +62,7 @@ public class AdminDAO implements AdminInterfaceDAO {
      * @return List of FlipFitCenter objects that are pending approval.
      */
     public List<FlipFitCenter> getPendingGymCentres() {
-        return gymCentreDAO.getPendingGymCentreList();
+        return gymCentreDAO.getPendingGymCenterList();
     }
 
 }

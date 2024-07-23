@@ -181,7 +181,7 @@ public class CustomerFlipFitMenu {
         System.out.printf("%-8s\t\n", "SCHEDULE_ID" + RESET_COLOR);
         System.out.println(DASHED_LINE);
         for(UserPlan userPlan: allUserPlan) {
-            System.out.printf("%-8s\t", userPlan.getCenterID());
+            System.out.printf("%-8s\t", userPlan.getCenterId());
             System.out.printf("%-8s\t", userPlan.getSlotId());
             System.out.printf("%-8s\t", userPlan.getDate());
             System.out.printf("%-8s\t", userPlan.getTime());

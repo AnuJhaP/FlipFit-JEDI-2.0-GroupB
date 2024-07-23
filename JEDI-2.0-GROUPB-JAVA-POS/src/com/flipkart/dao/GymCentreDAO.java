@@ -55,7 +55,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
                 allGymCentres.add(gymCentre);
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return allGymCentres;
@@ -123,7 +123,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
             statement.setInt(8, centre.isApproved());
 
             statement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -160,7 +160,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
                 gymCentre.setApproved(rs.getInt("isApproved"));
                 pendingList.add(gymCentre);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return pendingList;
@@ -184,7 +184,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
             statement.setInt(1, isApproved);
             statement.setString(2, gymCentreId);
             statement.executeUpdate();
-        } catch (SQLException se) {
+        } catch (SQLException | ClassNotFoundException se) {
             se.printStackTrace();
         }
     }
@@ -207,7 +207,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
             statement.setInt(1, 2); // 2 represents pending approval
             statement.setString(2, gymCentreId);
             statement.executeUpdate();
-        } catch (SQLException se) {
+        } catch (SQLException | ClassNotFoundException se) {
             se.printStackTrace();
         }
     }
@@ -244,7 +244,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
                 );
                 allCentreByCity.add(gymCentre);
             }
-        } catch (SQLException se) {
+        } catch (SQLException | ClassNotFoundException se) {
             se.printStackTrace();
         }
         return allCentreByCity;

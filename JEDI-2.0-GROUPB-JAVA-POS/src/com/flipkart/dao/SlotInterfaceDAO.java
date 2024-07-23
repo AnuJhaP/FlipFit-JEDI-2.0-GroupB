@@ -21,7 +21,7 @@ public interface SlotInterfaceDAO {
      * @param gymCentreId ID of the gym center for which slots are to be retrieved
      * @return List of FlipFitSlot objects representing slots associated with the specified gym center
      */
-    public List<FlipFitSlot> getSlotByCentreId(String gymCentreId);
+    public List<FlipFitSlot> getSlotByCenterId(String gymCentreId);
 
     /**
      * Adds a new slot to the system.
@@ -45,6 +45,6 @@ public interface SlotInterfaceDAO {
      * @param gymCentreId ID of the gym center associated with the slot
      * @return FlipFitSlot object representing the slot with the specified ID and gym center ID
      */
-    public FlipFitSlot getSlotByIdandCentreId(String slotID, String gymCentreId);
+    public FlipFitSlot getSlotByIdandCenterId(String slotID, String gymCentreId);
 
 }
