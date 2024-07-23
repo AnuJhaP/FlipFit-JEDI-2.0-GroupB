@@ -1,42 +1,72 @@
 package com.flipkart.bean;
 
-// FlipFitPayment class represents a payment entity in the FlipFit system
+/**
+ * FlipFitPayment class represents a payment entity in the FlipFit system.
+ * It encapsulates information about a payment, including payment ID, amount paid, and associated booking ID.
+ */
 public class FlipFitPayment {
     private String paymentId;    // Unique identifier for the payment
     private String amountPaid;   // Amount paid for the payment
     private String bookingId;    // ID of the booking associated with the payment
 
-    // Constructor for FlipFitPayment class (empty)
+    /**
+     * Default constructor for creating a FlipFitPayment object.
+     * Initializes the object with default values.
+     */
     public FlipFitPayment() {
         // Default constructor is empty
     }
 
-    // Getter method for retrieving payment ID
+    /**
+     * Getter method to retrieve the payment ID.
+     *
+     * @return The payment ID of the FlipFitPayment object.
+     */
     public String getPaymentId() {
         return paymentId;
     }
 
-    // Setter method for updating payment ID
+    /**
+     * Setter method to update the payment ID.
+     *
+     * @param paymentId The new payment ID to be set for the FlipFitPayment object.
+     */
     public void setPaymentId(String paymentId) {
         this.paymentId = paymentId;
     }
 
-    // Getter method for retrieving amount paid
+    /**
+     * Getter method to retrieve the amount paid for the payment.
+     *
+     * @return The amount paid as a String for the FlipFitPayment object.
+     */
     public String getAmountPaid() {
         return amountPaid;
     }
 
-    // Setter method for updating amount paid
+    /**
+     * Setter method to update the amount paid for the payment.
+     *
+     * @param amountPaid The new amount paid as a String to be set for the FlipFitPayment object.
+     */
     public void setAmountPaid(String amountPaid) {
         this.amountPaid = amountPaid;
     }
 
-    // Getter method for retrieving booking ID associated with the payment
+    /**
+     * Getter method to retrieve the booking ID associated with the payment.
+     *
+     * @return The booking ID associated with the payment for the FlipFitPayment object.
+     */
     public String getBookingId() {
         return bookingId;
     }
 
-    // Setter method for updating booking ID associated with the payment
+    /**
+     * Setter method to update the booking ID associated with the payment.
+     *
+     * @param bookingId The new booking ID to be set for the FlipFitPayment object.
+     */
     public void setBookingId(String bookingId) {
         this.bookingId = bookingId;
     }
