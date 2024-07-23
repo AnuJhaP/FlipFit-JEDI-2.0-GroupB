@@ -3,7 +3,9 @@ package com.flipkart.dao;
 import com.flipkart.bean.FlipFitSlot;
 import java.util.List;
 
-// SlotInterfaceDAO interface defines methods for managing slots in the Flipkart system
+/**
+ * SlotInterfaceDAO interface defines methods for managing slots in the Flipkart system
+ */
 public interface SlotInterfaceDAO {
 
     /**

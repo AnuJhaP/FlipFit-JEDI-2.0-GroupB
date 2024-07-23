@@ -24,7 +24,7 @@ import static com.flipkart.constant.FlipFitConstant.RESET_COLOR;
 
 
 /**
- * @ JEDI-02
+ * @author  JEDI-02
  * CustomerFlipFitMenu class provides functionality for Customer operations in FlipFit application.
  */
 public class CustomerFlipFitMenu {

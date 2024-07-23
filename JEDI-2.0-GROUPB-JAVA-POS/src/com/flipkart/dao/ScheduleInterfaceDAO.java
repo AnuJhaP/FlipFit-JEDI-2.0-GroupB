@@ -4,7 +4,9 @@ import com.flipkart.bean.Schedule;
 import java.sql.Date;
 import java.util.List;
 
-// ScheduleInterfaceDAO interface defines methods for managing schedules in the Flipkart system
+/**
+ * ScheduleInterfaceDAO interface defines methods for managing schedules in the Flipkart system
+ */
 public interface ScheduleInterfaceDAO {
 
     /**

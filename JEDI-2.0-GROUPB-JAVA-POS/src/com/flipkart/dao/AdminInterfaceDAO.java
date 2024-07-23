@@ -41,6 +41,12 @@ public interface AdminInterfaceDAO {
      * @return List of FlipFitCenter objects representing pending gym centers
      */
     public List<FlipFitCenter> getPendingGymCentres();
+
+    /** Function to check validity of user
+     * @param userName name of user
+     * @param password passowrd of user
+     * @return boolean
+     */
     public boolean isUserValid(String userName, String password);
 
 }

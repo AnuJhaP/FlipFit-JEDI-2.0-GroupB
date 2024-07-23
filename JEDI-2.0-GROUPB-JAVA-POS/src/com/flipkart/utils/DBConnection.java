@@ -47,8 +47,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+/**
+ * DB connection file
+ */
 public class DBConnection
 {
+    /** function to connect to dB
+     * @return connection with dB
+     * @throws SQLException defined further
+     */
     public static Connection connect() throws SQLException {
         try{
             Class.forName("com.mysql.jdbc.Driver");

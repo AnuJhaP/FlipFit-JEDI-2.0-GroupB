@@ -34,7 +34,7 @@ import static com.flipkart.constant.FlipFitConstant.*;
 
 
 /**
- * @ JEDI-02
+ * @author JEDI-02
  * AdminFlipFitMenu class provides functionality for Admin operations in FlipFit application.
  */
 public class AdminFlipFitMenu {

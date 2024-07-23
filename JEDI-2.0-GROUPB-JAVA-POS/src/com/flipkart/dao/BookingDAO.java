@@ -19,7 +19,9 @@ import static com.flipkart.constant.SQLConstants.*;
  */
 public class BookingDAO {
 
-    // Constructor
+    /**
+     * Constructor for Booking DAO
+     */
     public BookingDAO() {
     }
 

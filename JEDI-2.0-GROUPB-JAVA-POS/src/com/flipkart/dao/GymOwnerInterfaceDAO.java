@@ -3,7 +3,9 @@ package com.flipkart.dao;
 import com.flipkart.bean.FlipFitGymOwner;
 import java.util.List;
 
-// GymOwnerInterfaceDAO interface defines methods for managing gym owners in the Flipkart system
+/**
+ * GymOwnerInterfaceDAO interface defines methods for managing gym owners in the Flipkart system
+ */
 public interface GymOwnerInterfaceDAO {
 
     /**

@@ -18,7 +18,7 @@ import com.flipkart.exceptions.LoginFailedException;
 
 
 /**
- * @ JEDI-02
+ * @author JEDI-02
  * GymOwnerFlipFitMenu class handles operations for Gym Owners in FlipFit application.
  */
 public class GymOwnerFlipFitMenu {

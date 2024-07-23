@@ -40,7 +40,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     /**
      * Retrieves a schedule based on slot ID and date.
      *
-     * @param slotId ID of the slot
+     * @param SlotId ID of the slot
      * @param date   Date of the schedule
      * @return The Schedule object matching the slot ID and date, or null if not found
      */

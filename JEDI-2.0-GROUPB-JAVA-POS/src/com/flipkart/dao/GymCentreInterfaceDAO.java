@@ -3,7 +3,9 @@ package com.flipkart.dao;
 import com.flipkart.bean.FlipFitCenter;
 import java.util.List;
 
-// GymCentreInterfaceDAO interface defines methods for managing gym centers in the Flipkart system
+/**
+ * GymCentreInterfaceDAO interface defines methods for managing gym centers in the Flipkart system
+ */
 public interface GymCentreInterfaceDAO {
 
     /**
