@@ -1,10 +1,8 @@
-package com.dropwizard;
+package com.flipkart.app;
 
 
-import com.flipkart.rest.AdminController;
 import com.flipkart.rest.AdminFlipFitRestController;
-import com.flipkart.rest.CustomerController;
-import com.flipkart.rest.GymOwnerController;
+import com.flipkart.rest.AdminFlipFitRestController;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;

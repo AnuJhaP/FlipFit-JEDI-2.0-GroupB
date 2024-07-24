@@ -1,9 +1,9 @@
 package com.flipkart.business;
 
-import com.flipkart.DAO.AdminDAO;
-import com.flipkart.DAO.AdminInterfaceDAO;
-import com.flipkart.DAO.GymOwnerDAO;
-import com.flipkart.DAO.GymOwnerInterfaceDAO;
+import com.flipkart.dao.AdminDAO;
+import com.flipkart.dao.AdminInterfaceDAO;
+import com.flipkart.dao.GymOwnerDAO;
+import com.flipkart.dao.GymOwnerInterfaceDAO;
 import com.flipkart.bean.GymCentre;
 import com.flipkart.bean.GymOwner;
 
