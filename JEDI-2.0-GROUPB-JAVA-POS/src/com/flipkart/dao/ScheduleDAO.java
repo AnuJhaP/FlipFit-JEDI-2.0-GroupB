@@ -24,7 +24,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
             // Establish a connection to the database
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
             // Prepare the SQL statement for inserting a new schedule
             PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_SCHEDULE);
             ps.setString(1, schedule.getScheduleID());
@@ -54,7 +54,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
             // Establish a connection to the database
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 // Prepare the SQL statement for fetching a schedule by ID
             PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_SCHEDULE_BY_ID);
             ps.setString(1, scheduleId);
@@ -84,7 +84,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_SCHEDULES_BY_DATE);
             ps.setDate(1, new java.sql.Date(date.getTime()));
@@ -118,7 +118,7 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             int availability = getSchedule(scheduleId).getAvailability();
             if(availability < 1 && action == -1){

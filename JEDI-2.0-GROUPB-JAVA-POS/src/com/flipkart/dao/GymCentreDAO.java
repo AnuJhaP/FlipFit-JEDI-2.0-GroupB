@@ -35,7 +35,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             statement = conn.prepareStatement(SQLConstants.FETCH_GYM_CENTRES_BY_OWNER_ID);
             statement.setString(1, gymOwnerId);
@@ -73,7 +73,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             PreparedStatement stmt = conn.prepareStatement(FETCH_GYM_CENTRE_BY_ID);
             stmt.setString(1, gymCentreId);
@@ -107,7 +107,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             System.out.println("Adding gym centre....");
 
@@ -140,7 +140,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             System.out.println("Fetching gym centres..");
 
@@ -176,7 +176,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             System.out.println("Fetching gyms centres..");
 
@@ -199,7 +199,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
 
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             System.out.println("Sending gym centre approval request..");
             // SQL_APPROVE_GYM_CENTRE_BY_ID_QUERY="Update GymCentre Set isApproved=? WHERE centreId=?";
@@ -224,7 +224,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
 
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             System.out.println("Fetching gyms centres by City..");
 

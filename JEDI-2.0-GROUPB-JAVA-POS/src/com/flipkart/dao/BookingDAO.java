@@ -37,7 +37,7 @@ public class BookingDAO {
      */
     public void addBooking(String userName, String scheduleID) throws BookingFailedException {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             PreparedStatement stmt = conn.prepareStatement(ADD_BOOKING);
             stmt.setString(1, userName + scheduleID);
@@ -62,7 +62,7 @@ public class BookingDAO {
     public List<FlipFitBooking> getBookingByCustomerId(String customerId) throws BookingFailedException {
         List<FlipFitBooking> allBookingList = new ArrayList<>();
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             PreparedStatement stmt = conn.prepareStatement(GET_BOOKING_BY_CUSTOMER_ID);
             stmt.setString(1, customerId);
@@ -95,7 +95,7 @@ public class BookingDAO {
         List<FlipFitBooking> allBookingList = getBookingByCustomerId(customerId);
         for (FlipFitBooking booking : allBookingList) {
             try {
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
                 PreparedStatement stmt = conn.prepareStatement(GET_USERPLAN_BY_CUSTOMER_ID);
                 stmt.setString(1, booking.getScheduleID());
@@ -150,7 +150,7 @@ public class BookingDAO {
      */
     public void cancelBookingById(String bookingID) throws BookingFailedException {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
             PreparedStatement stmt = conn.prepareStatement(CANCEL_BOOKING_BY_ID);
             stmt.setString(1, bookingID);
             stmt.executeUpdate();
@@ -171,7 +171,7 @@ public class BookingDAO {
     public FlipFitBooking getBookingByBookingId(String bookingId) throws BookingFailedException {
         FlipFitBooking booking = null;
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             PreparedStatement stmt = conn.prepareStatement(GET_BOOKING_BY_BOOKING_ID);
             stmt.setString(1, bookingId);

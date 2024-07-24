@@ -31,7 +31,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
             // Establish a connection to the database
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //Prepare and execute the SQL query to fetch all slots
             PreparedStatement ps = conn.prepareStatement(SQLConstants.FETCH_ALL_SLOTS);
             ResultSet rs = ps.executeQuery();
@@ -66,7 +66,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             Class.forName("com.mysql.jdbc.Driver");
 
             // Establish a connection to the database
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //Prepare and execute the SQL query to fetch slots by center ID
             PreparedStatement ps = conn.prepareStatement(SQLConstants.FETCH_SLOT_BY_CENTRE);
             ps.setString(1,gymCentreId);
@@ -100,7 +100,7 @@ public class SlotDAO implements SlotInterfaceDAO{
             Class.forName("com.mysql.jdbc.Driver");
 
             // Establish a connection to the database
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 
             // Prepare and execute the SQL query to add a new slot
             PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_SLOT);
@@ -129,7 +129,7 @@ public class SlotDAO implements SlotInterfaceDAO{
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             PreparedStatement ps = conn.prepareStatement(SQLConstants.FETCH_SLOT_BY_ID);
             ps.setString(1,slotID);
@@ -163,7 +163,7 @@ public class SlotDAO implements SlotInterfaceDAO{
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 //
             PreparedStatement ps = conn.prepareStatement(SQLConstants.FETCH_SLOT_BY_ID_AND_CENTRE_ID);
             ps.setString(1,slotID);

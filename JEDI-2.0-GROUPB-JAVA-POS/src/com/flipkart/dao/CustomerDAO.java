@@ -27,7 +27,7 @@ public class CustomerDAO implements CustomerInterfaceDAO {
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) throws RegisterationFailedForCustomerException {
         try {
             // Establish database connection
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             // Prepare SQL statement for adding a new customer
             PreparedStatement stmt = con.prepareStatement(ADD_NEW_CUSTOMER);
@@ -63,7 +63,7 @@ public class CustomerDAO implements CustomerInterfaceDAO {
     public boolean isUserValid(String userName, String password) throws UserInvalidException {
         try {
             // Establish database connection
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             // Prepare SQL statement for customer login validation
             PreparedStatement stmt = con.prepareStatement(CUSTOMER_LOGIN_QUERY);
@@ -98,7 +98,7 @@ public class CustomerDAO implements CustomerInterfaceDAO {
         FlipFitCustomer customer = new FlipFitCustomer();
         try {
             // Establish database connection
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "Poojayadav5*");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "ahdul0Uw!@#%");
 
             // Prepare SQL statement to retrieve customer by ID
             PreparedStatement stmt = con.prepareStatement(GET_CUSTOMER_BY_ID);
