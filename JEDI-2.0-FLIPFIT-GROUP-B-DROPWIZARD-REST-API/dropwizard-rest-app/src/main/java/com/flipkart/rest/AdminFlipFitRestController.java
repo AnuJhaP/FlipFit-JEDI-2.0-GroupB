@@ -5,6 +5,7 @@ import com.flipkart.bean.Admin;
 import com.flipkart.bean.ApprovalRequest;
 import com.flipkart.bean.GymCentre;
 import com.flipkart.bean.GymOwner;
+import com.flipkart.business.AdminService;
 import com.flipkart.business.GymOwnerService;
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.Time;

@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-import com.flipkart.DAO.GymOwnerDAO;
+import com.flipkart.dao.GymOwnerDAO;
 import com.flipkart.bean.GymOwner;
 
 import java.util.List;

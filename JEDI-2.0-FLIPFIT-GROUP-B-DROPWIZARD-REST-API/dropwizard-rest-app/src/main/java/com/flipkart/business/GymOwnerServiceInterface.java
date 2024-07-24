@@ -1,5 +1,9 @@
 package com.flipkart.business;
 
+import com.flipkart.bean.GymOwner;
+
+import java.util.List;
+
 public interface GymOwnerServiceInterface {
     void requestGymOwnerApproval(String gymOwnerId);
     List<GymOwner> viewAllGymOwners();
