@@ -21,7 +21,7 @@ import java.util.Properties;
 //
 //                Properties newProp = new Properties();
 //
-//                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+//                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 ////                System.out.println("Database Connected");
 //                singleInstance = connection;
 //                return connection;
@@ -60,7 +60,7 @@ public class DBConnection
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","Poojayadav5*");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema","root","ahdul0Uw!@#%");
 
 //            PreparedStatement stmt=con.prepareStatement("insert into emp values(?,?)");
 //            stmt.setInt(1,101);//1 specifies the first parameter in the query
