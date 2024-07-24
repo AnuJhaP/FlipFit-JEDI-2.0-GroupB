@@ -3,34 +3,20 @@ package com.flipkart.client;
 import com.flipkart.bean.FlipFitAdmin;
 import com.flipkart.bean.FlipFitGymOwner;
 import com.flipkart.bean.FlipFitCenter;
-import com.flipkart.business.AdminService;
 import com.flipkart.business.AdminServiceImpl;
-import com.flipkart.dao.AdminDAO;
 import com.flipkart.exceptions.LoginFailedException;
 
 import static com.flipkart.client.FlipFitApplicationClient.scanner;
 import static com.flipkart.constant.FlipFitConstant.*;
 
-import java.util.Scanner;
 import java.util.List;
 
-import com.flipkart.bean.FlipFitAdmin;
-import com.flipkart.bean.FlipFitCenter;
-import com.flipkart.bean.FlipFitGymOwner;
-import com.flipkart.business.AdminService;
-import com.flipkart.business.AdminServiceImpl;
 import com.flipkart.business.GymOwnerService;
 import com.flipkart.business.GymOwnerServiceImpl;
-import com.flipkart.exceptions.LoginFailedException;
 import com.flipkart.utils.FlipFitUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Scanner;
-
-import static com.flipkart.client.FlipFitApplicationClient.scanner;
-import static com.flipkart.constant.FlipFitConstant.*;
 
 
 /**

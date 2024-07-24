@@ -143,7 +143,7 @@ public class SQLConstants {
     /**
      * SQL query to modify schedule availability.
      */
-    public static final String MODIFY_SCHEDULE_AVAILABILITY = "UPDATE flipfit.schedule SET availability = ? WHERE scheduleId = ?";
+    public static final String MODIFY_SCHEDULE_AVAILABILITY = "UPDATE FlipFitSchedule SET availability = ? WHERE scheduleId = ?";
 
     /**
      * Booking SQL Queries
@@ -177,5 +177,5 @@ public class SQLConstants {
     /**
      * SQL query to fetch user plan by customer ID.
      */
-    public static final String GET_USERPLAN_BY_CUSTOMER_ID = "SELECT * FROM slot JOIN schedule WHERE slot.slotId = schedule.slotId AND schedule.scheduleId = ?";
+    public static final String GET_USERPLAN_BY_CUSTOMER_ID = "SELECT * FROM FlipFitSlot JOIN FlipFitSchedule WHERE FlipFitSlot.slotId = FlipFitSchedule.slotId AND FlipFitSchedule.scheduleId = ?";
 }
