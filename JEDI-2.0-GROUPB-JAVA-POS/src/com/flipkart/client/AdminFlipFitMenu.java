@@ -65,6 +65,7 @@ public class AdminFlipFitMenu {
          * @return true if login is successful, false otherwise.
          */
         public boolean adminLogin(String userName, String password) {
+
             if (adminService.isUserValid(userName, password)) {
                 //adminService.isUserValid(userName,password);
                 System.out.println("Successfully logged in");
